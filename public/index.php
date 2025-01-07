@@ -2,9 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Controllers\TaskController;
+use App\Controllers\MainController;
 
-$controller = new TaskController();
+$controller = new MainController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
