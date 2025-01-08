@@ -24,7 +24,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_DB: extraplay
+      POSTGRES_DB: Extraplay
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
 

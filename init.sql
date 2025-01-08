@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS review (
     id_game INT,
     note INT CHECK (note BETWEEN 1 AND 5),
     comment TEXT,
-    FOREIGN KEY (id_user) REFERENCES utilisateurs(id_user) ON DELETE CASCADE,
+    FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
     FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
 
