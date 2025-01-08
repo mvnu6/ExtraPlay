@@ -32,9 +32,6 @@ class Game
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
-
-
     /**
      * Mettre à jour un jeu existant.
      */

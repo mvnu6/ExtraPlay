@@ -23,14 +23,15 @@
                     <div class="">mémo</div>
                     <div class="">motus</div>
                     <div class="">quizz</div>
+                    <div class="">Jouez</div>
                 </article>
 
                 <h1>Prêt </br> à jouer ?</h1>
-                <button class="btn1">Jouer <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn-2">Jouer<i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
             </section>
             <section class="txt-2">
                 <p>
-                    Commencez dès maintenant à parcourir notre catalogue et trouvez l’équipement parfait pour votre prochain smash !
+                    Commencez dès maintenant à jouer notre catalogue de jeux.
                 </p>
             </section>
         </section>
