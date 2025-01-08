@@ -1,4 +1,11 @@
 <div class="svg-bg">
+    <?php
+
+    // Vérifier si l'utilisateur est connecté
+    if (isset($_SESSION['username'])) {
+        echo "<h1>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " !</h1>";
+    }
+    ?>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2315.03" height="9697.145" viewBox="0 0 2315.03 9697.145">
@@ -27,7 +34,9 @@
                 </article>
 
                 <h1>Prêt </br> à jouer ?</h1>
-                <button class="btn-2">Jouer<i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
+                <a href="login">
+                    <button class="btn-2">Jouer<i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
+                </a>
             </section>
             <section class="txt-2">
                 <p>
