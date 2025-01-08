@@ -20,9 +20,9 @@
         <section class="hero-banner">
             <section class="txt-1">
                 <article class="slide-txt">
-                    <div class="">Équipez</div>
-                    <div class="">Sautez</div>
-                    <div class="">Frappez</div>
+                    <div class="">Mémory</div>
+                    <div class="">Motus</div>
+                    <div class="">Quiz</div>
                     <div class="">Gagnez</div>
                 </article> 
                     
