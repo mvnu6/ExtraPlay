@@ -20,12 +20,14 @@ Une application simple de gestion de tâches construite avec PHP et PostgreSQL.
 ## 📦 Installation
 
 1. Clonez le repository :
+
 ```bash
 git clone [url-du-repo]
 cd [nom-du-dossier]
 ```
 
 2. Lancez l'application avec Docker Compose :
+
 ```bash
 docker compose up --build
 ```
@@ -34,11 +36,9 @@ docker compose up --build
 
 Accédez à l'application via votre navigateur : [http://localhost:8080](http://localhost:8080)
 
-
 ## 📊 Accès à pgAdmin
 
 pgAdmin est accessible via votre navigateur : [http://localhost:8081](http://localhost:8081)
-
 
 ## 📁 Structure du projet
 
@@ -46,7 +46,7 @@ pgAdmin est accessible via votre navigateur : [http://localhost:8081](http://loc
 projet/
 ├── public/               # Fichiers publics
 │   ├── index.php        # Point d'entrée
-│   ├── .htaccess       
+│   ├── .htaccess
 │   └── css/
 │       └── style.css    # Styles CSS
 ├── src/                 # Code source
@@ -71,7 +71,7 @@ projet/
 environment:
   DB_HOST: db
   DB_PORT: 5432
-  DB_NAME: todolist
+  DB_NAME: postgres
   DB_USER: postgres
   DB_PASSWORD: password
 
@@ -86,11 +86,60 @@ environment:
 La base de données PostgreSQL est initialisée avec la structure suivante :
 
 ```sql
-CREATE TABLE tasks (
+CREATE TABLE IF NOT EXISTS tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     completed BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Supprimer la table utilisateurs si elle existe
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE IF NOT EXISTS users (
+    id_user SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- Supprimer la table category si elle existe
+DROP TABLE IF EXISTS category CASCADE;
+CREATE TABLE IF NOT EXISTS category (
+    id_category SERIAL PRIMARY KEY,
+    name_category VARCHAR(50) NOT NULL
+);
+
+-- Supprimer la table Games si elle existe
+DROP TABLE IF EXISTS Games CASCADE;
+CREATE TABLE IF NOT EXISTS Games (
+    id_game SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    id_category INT,
+    FOREIGN KEY (id_category) REFERENCES category(id_category) ON DELETE CASCADE
+);
+
+-- Supprimer la table avis si elle existe
+DROP TABLE IF EXISTS review CASCADE;
+CREATE TABLE IF NOT EXISTS review (
+    id_review SERIAL PRIMARY KEY,
+    id_user INT,
+    id_game INT,
+    note INT CHECK (note BETWEEN 1 AND 5),
+    comment TEXT,
+    FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
+    FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
+);
+
+-- Supprimer la table subscription si elle existe
+DROP TABLE IF EXISTS subscription CASCADE;
+CREATE TABLE IF NOT EXISTS subscription (
+    id_subscription SERIAL PRIMARY KEY,
+    name_sub VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    time INT NOT NULL, -- in days
+    id_game INT,
+    FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
 ```
 
@@ -127,7 +176,7 @@ docker compose logs
 docker compose exec php bash
 
 # Accéder à la base de données
-docker compose exec db psql -U postgres -d todolist
+docker compose exec db psql -U postgres -d postgres
 
 # Accéder à pgAdmin
 http://localhost:8081
@@ -139,17 +188,19 @@ docker compose restart pgadmin
 ### Configuration initiale de pgAdmin
 
 1. Connectez-vous avec :
+
    - Email: admin@admin.com
    - Mot de passe: admin
 
 2. Pour ajouter le serveur PostgreSQL :
+
    - Clic droit sur "Servers" → "Register" → "Server"
    - Dans l'onglet "General" :
      - Name: TodoList (ou autre nom de votre choix)
    - Dans l'onglet "Connection" :
      - Host name/address: db
      - Port: 5432
-     - Maintenance database: todolist
+     - Maintenance database: extraplay
      - Username: postgres
      - Password: password
 
@@ -162,6 +213,7 @@ docker compose restart pgadmin
 ## 🔨 Services Docker
 
 L'application utilise trois services Docker :
+
 1. **PHP/Apache** : Serveur web et application PHP
 2. **PostgreSQL** : Base de données
 3. **pgAdmin** : Interface d'administration de la base de données
