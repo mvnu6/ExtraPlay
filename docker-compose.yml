@@ -14,7 +14,7 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: todolist
+      DB_NAME: Extraplay
       DB_USER: postgres
       DB_PASSWORD: password
 
@@ -24,7 +24,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_DB: todolist
+      POSTGRES_DB: Extraplay
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
 

@@ -29,11 +29,17 @@
                 <h1>Prêt </br> à jouer ?</h1>
                 <button class="btn1">Jouer <i class="fa-solid fa-arrow-right-long"></i></button>
             </section>
-            <section class="txt-2">
+
+            <section class="slide-img">
+                <img src="/images/johnporkjpg.jpg" alt="MARCHE PAS">
+                <img src="/images/kyoto-fuji-san-view-dxo42w3pchmqmdrn.webp" alt="MARCHE PAS">
+                <img src="/images/Featured-image-Uluwatu-Temple-Bali-Indonesia.jpg" alt="MARCHE PAS">
+            </section>
+            <!-- <section class="txt-2">
                 <p>
             Commencez dès maintenant à parcourir notre catalogue et trouvez l’équipement parfait pour votre prochain smash !
                 </p>
-            </section>                
+            </section>                 -->
         </section>
         
     </section>

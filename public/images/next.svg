@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Molecules/Arrows/Next</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M44,22 C44,34.150256 34.1504985,44 22.0005415,44 C9.84950154,44 0,34.150256 0,22 C0,9.84866089 9.84950154,0 22.0005415,0 C34.1504985,0 44,9.84866089 44,22" id="path-1"></path>
+        <path d="M3.32203755,12 C3.01875011,12 2.71662469,11.8810949 2.48886861,11.6467818 C2.04149058,11.1851501 2.05194877,10.4472388 2.51210902,9.99843021 L6.83715059,5.7807951 L2.55858986,2.04460921 C2.07518919,1.62261255 2.02406027,0.885866999 2.44587383,0.400920562 C2.86652538,-0.0851916109 3.60092255,-0.136484023 4.08548524,0.286678373 L9.31690307,4.85520021 C9.56208947,5.06969575 9.70618005,5.37628449 9.7143142,5.70269074 C9.72361036,6.02793126 9.59578807,6.34268015 9.3633839,6.56999879 L4.13196607,11.6700965 C3.90537201,11.8904208 3.61370478,12 3.32203755,12" id="path-3"></path>
+    </defs>
+    <g id="Molecules/Arrows/Next" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Arrow">
+            <g id="Colors/Yellow">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FDC62F" xlink:href="#path-1"></use>
+            </g>
+            <g id="Atoms/Arrows/Simple/Right" transform="translate(16.000000, 16.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <use id="Fill-4-Copy" fill-rule="evenodd" xlink:href="#path-3"></use>
+                <g id="🎨-colors" stroke-width="1" fill-rule="evenodd" mask="url(#mask-4)" fill="#FFFFFF">
+                    <g id="Colors/White">
+                        <rect id="Rectangle-3" x="0" y="0" width="12" height="12"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
