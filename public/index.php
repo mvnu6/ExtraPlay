@@ -11,6 +11,7 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 switch ($path) {
     case '/':
         $controller->index();
+        $controller->footer();
         break;
     case '/create':
         $controller->create();
