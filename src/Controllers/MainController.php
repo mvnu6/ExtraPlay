@@ -16,6 +16,9 @@ class MainController {
         $tasks = $this->taskModel->getAllTasks();
         require __DIR__ . '/../../templates/home.php';
     }
+    public function footer() {
+        require __DIR__ . '/../../templates/partials/footer.php';
+    }
 
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
