@@ -179,23 +179,23 @@ ul li:hover .menu-type{
 
 #login {background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%)}
 #login {
-   margin: 0;
-   padding: 14px 24px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 1px #eee;
-   border-radius: 5px;
-   /* display: block; */
- }
+    margin: 0;
+    padding: 14px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 1px #eee;
+    border-radius: 5px;
+    /* display: block; */
+}
 
- #login:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
+#login:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
 
 
 #register {background-image: linear-gradient(to right, #EB3349 0%, #F45C43  51%, #EB3349  100%)}
@@ -209,28 +209,28 @@ ul li:hover .menu-type{
     color: white;            
     box-shadow: 0 0 1px #eee;
     border-radius: 5px;
-  }
+}
 
 #register:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
 }
- 
+
 /*Le nouveau Home */
 main{
-      margin: 0 10px;
+    margin: 0 10px;
 }
 
 main section.first-page{    
-           
-        background-image: radial-gradient(circle, #fff 2px, rgba(0, 0, 0, 0) 2px);
-        background-size: 90px 90px;
-        z-index: -15;
-        /* padding-bottom: em; */
-        margin-bottom: 2em;
-}
     
+    background-image: radial-gradient(circle, #fff 2px, rgba(0, 0, 0, 0) 2px);
+    background-size: 90px 90px;
+    z-index: -15;
+    /* padding-bottom: em; */
+    margin-bottom: 2em;
+}
+
 main .btn1{
     margin-top: 1em ;
     background: transparent;
@@ -255,7 +255,6 @@ main i{
     justify-content: space-around;
     /* height: 100vh; */
     padding: 5em 0 0 0;
-    /* border: solid red; */
 
 }
 .txt-1{
@@ -264,8 +263,8 @@ main i{
     align-items: flex-end;
     justify-content: center;
     height: 20%;
-    
 }
+
 .txt-1 h1{
     font-size: var(--huge);
     font-weight: normal;
@@ -314,6 +313,27 @@ main i{
     
 }
 
+.slide-img{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 500px;
+    min-width: 500px;
+    overflow: hidden;
+    text-align: right;
+
+    width: 40%;
+    /* border: solid red; */
+}
+.slide-img img{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    object-fit: cover;
+
+    height: 500px;
+    max-width: 500px;
+}
 /* Cards */
 
 .cards-wrapper{
@@ -394,8 +414,15 @@ main i{
 
 /* ----- */
 
-/* Chiffres / Statistiques */
+/* Games */
 
+.games{
+    display: flex;
+}
+.games img{
+    max-width: 250px;
+    max-height: 250px;
+}
 .statistics-section h1{
     font-size: var(--x-large);
     margin-left: 2.6em;
@@ -444,6 +471,9 @@ main i{
     /* line-height: 12px; */
     font-size: var(--x-small);
 }
+
+
+
     /* Avantages */
 
 .main-avantages article{
