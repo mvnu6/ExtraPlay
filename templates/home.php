@@ -31,9 +31,9 @@
             </section>
 
             <section class="slide-img">
-                <img src="/images/johnporkjpg.jpg" alt="MARCHE PAS">
-                <img src="/images/kyoto-fuji-san-view-dxo42w3pchmqmdrn.webp" alt="MARCHE PAS">
-                <img src="/images/Featured-image-Uluwatu-Temple-Bali-Indonesia.jpg" alt="MARCHE PAS">
+                <img src="/images/motus1.png" alt="MARCHE PAS">
+                <img src="/images/quiz1.jpg" alt="MARCHE PAS">
+                <img src="/images/cardmemory3.png" alt="MARCHE PAS">
             </section>
             <!-- <section class="txt-2">
                 <p>
