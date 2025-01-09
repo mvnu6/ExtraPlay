@@ -8,11 +8,11 @@ if (!isset($_SESSION['username'])) {
   exit;
 }
 if (isset($_SESSION['username'])) {
-  echo "<h1>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " !</h1>";
+  echo "<h1 class='msg-logged'>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " ! 👋</h1>";
 }
 ?>
-<main class="main-content">
-  <h1>Liste des jeux</h1>
+<main class="games-main">
+  <h1 class="text-games">Liste des jeux 🎮</h1>
   <div class="games">
     <?php foreach ($games as $game): ?>
       

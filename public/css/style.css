@@ -416,6 +416,7 @@ main i {
 /* Games */
 
 .games {
+  margin-left: 3em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2em;
@@ -579,6 +580,7 @@ main i {
 
 
 .card-game {
+  /* border: solid red; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1178,11 +1180,26 @@ main i {
   opacity: 0.9;
 }
 /* ---- */
+/* Games page */
+.games-main{
+  margin: 0;
+  padding: 0;
+}
+/* Message de log in*/
+.msg-logged{
+  text-align: center;
+  margin: 2em 0;
+}
+/* ---- */
+
+/* Message Tous les jeux */
+.text-games{
+  margin: 2em 0 2em 2em;
+  
+}
 
 /* Footer */
 footer {
-  /* border: solid red; */
-  /* margin-top: 3em; */
   padding: 3em 0;
   background-color: #212121;
   color: white;

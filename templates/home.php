@@ -43,10 +43,12 @@
     <!-- Cards -->
     <section>
         <div class="cards-wrapper">
-            <p class="headline">Alola. vous offre un choix rapide, fiable et
+            <p class="headline">Bienvenue sur Extraplay : La destination ultime 
+
+
 
                 <span>
-                    venez jouer à nos jeux !
+                pour les amateurs de jeux ludiques !
                 </span>
             </p>
             <article class="container-cards">
@@ -55,21 +57,21 @@
                     <div class="card">
                         <div class="icon"><i class="fa-solid fa-volleyball"></i></div>
                         <div class="title">Large Choix & Flexibilité</div>
-                        <p class="desc">Un catalogue sur-mesure pour tous les passionnés de jeux ludique
+                        <p class="desc">Découvrez un catalogue sur-mesure pour tous les passionnés de mini-jeux et d'énigmes captivantes.
                         </p>
                     </div>
                     <div class="card">
                         <div class="icon"><i class="fa-solid fa-check"></i></div>
                         <div class="title">Jouez sans Attendre
                         </div>
-                        <p class="desc">Accédez à nos produits dès aujourd’hui.
+                        <p class="desc">Accédez à nos jeux dès aujourd’hui et plongez dans l’aventure sans délai.
                         </p>
                     </div>
                     <div class="card">
                         <div class="icon"><i class="fa-solid fa-angles-right"></i></div>
-                        <div class="title">Livraison Rapide et Fiable
+                        <div class="title">Extensions Rapides et Pratiques
                         </div>
-                        <p class="desc">Recevez vos équipements sous quelques jours ouvrables. Jouez sans attendre !
+                        <p class="desc">Besoin d’un coup de pouce ? Ajoutez des vies, des indices ou des niveaux bonus en un clic !
                         </p>
                     </div>
                 </div>
@@ -110,22 +112,22 @@
     </section>
     <!-- Plan -->
     <section class="plans-section">
-        <h1>Nos plans volley</h1>
+        <h1>Nos Plans Premium</h1>
         <div class="plans-container">
             <!-- 1ère ligne -->
             <div class="plan row-1 col-1 green">
                 <div class="plan-top">
                     <div class="tag">PLUS POPULAIRE</div>
-                    <h3>Plan Club Amateur</h3>
+                    <h3>Plan Explorateur</h3>
                     <ul>
-                        <li>Accès anticipé et prioritaire à nos promotions.</li>
-                        <li>Livraison rapide incluse.</li>
+                        <li>Accès anticipé et exclusif à de nouveaux jeux.     </li>
+                        <li>Extensions incluses : + de vies, + de chances, ou indices pour vos sessions.                        </li>
                         <li>Flexible : modifiez ou annulez à tout moment.</li>
                     </ul>
 
                 </div>
                 <div class="plan-bottom">
-                    <div class="price">150€/mois</div>
+                    <div class="price">15€/mois</div>
                     <span>Annulez à tout moment</span>
                     <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
                 </div>
@@ -133,16 +135,18 @@
 
             <div class="plan row-1 col-2">
                 <div class="plan-top">
-                    <h3>Plan Compétition</h3>
+                    <h3>Plan Challenger</h3>
                     <ul>
-                        <li>Équipement premium pour matchs officiels.
+                        <li>Accès premium à des modes de jeu compétitifs et chronométrés.
+
                         </li>
-                        <li>Réductions exclusives sur vos commandes.</li>
-                        <li>Livraison express prioritaire.</li>
+                        <li>Réductions exclusives sur les packs d’extensions.</li>
+                        <li>Priorité sur les nouvelles sorties de jeux.
+                        </li>
                     </ul>
                 </div>
                 <div class="plan-bottom">
-                    <div class="price">300€/mois</div>
+                    <div class="price">19€/mois</div>
                     <span>Annulez à tout moment</span>
                     <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
                 </div>
@@ -150,17 +154,20 @@
 
             <div class="plan row-1 col-3">
                 <div class="plan-top">
-                    <h3>Plan Pro Volley </h3>
+                    <h3>Plan Maître du Jeu </h3>
                     <ul>
-                        <li>Doublez vos commandes avec des prix réduits. </li>
-                        <li>Accès à des produits sur-mesure pour votre équipe.
+                        <li>Doublez vos récompenses et débloquez des contenus exclusifs.
                         </li>
-                        <li>Assistance dédiée pour les clubs.
+                        <li>Accès à des niveaux personnalisés et défis inédits.
+
+                        </li>
+                        <li>Assistance dédiée pour maximiser votre expérience.
+
                         </li>
                     </ul>
                 </div>
                 <div class="plan-bottom">
-                    <div class="price">500€/mois </div>
+                    <div class="price">25€/mois </div>
                     <span>Annulez à tout moment</span>
                     <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
                 </div>
@@ -168,13 +175,16 @@
 
             <!-- 2ème ligne -->
             <div class="plan row-2 col-4">
-                <h3>Besoin de conseils ?</h3>
-                <p>Vous avez des questions ou souhaitez un plan personnalisé ?</p>
-                <button class="btn-1">Prenez rendez-vous <i class="fa-solid fa-arrow-right-long"></i></button>
+                <h3>Besoin d’aide pour choisir un plan ?
+</h3>
+                <p>Vous avez des questions ou souhaitez une offre sur-mesure ?
+                </p>
+                <button class="btn-1">Prenez rendez-vous<i class="fa-solid fa-arrow-right-long"></i></button>
             </div>
             <div class="plan row-2 col-5">
-                <h3>Parrainez un club</h3>
-                <p>Recommandez-nous à d'autres équipes et gagnez 5 % de commission mensuelle sur chaque inscription.</p>
+                <h3>Parrainez vos amis !
+                </h3>
+                <p>Recommandez-nous et gagnez 5 % de commission sur chaque inscription.</p>
                 <button class="btn-1">Rejoignez notre programme <i class="fa-solid fa-arrow-right-long"></i></button>
             </div>
             <div class="plan row-2 col-6">
@@ -213,30 +223,33 @@
 
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Pourquoi ne pas simplement acheter ailleurs ou en magasin ?</h3>
+                            <h3>Pourquoi choisir ExtraPlay pour jouer à des jeux en ligne ?
+                            </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Notre boutique est spécialisée dans les équipements de volley, avec une sélection testée et approuvée par des joueurs. Vous bénéficiez également de conseils personnalisés et d’une expérience d’achat optimisée.</p>
+                            <p>ExtraPlay offre une expérience unique avec des jeux exclusifs, un contenu enrichi régulièrement, et des fonctionnalités adaptées à tous les types de joueurs, des débutants aux experts. Notre plateforme est pensée pour être intuitive et amusante, avec des options de personnalisation pour tous !</p>
                         </div>
                     </div>
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Où êtes-vous situés et quelle est votre zone de livraison ?</h3>
+                            <h3>Où êtes-vous situés et quels pays peuvent accéder à ExtraPlay ?
+                            </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Nous sommes basés en France et livrons dans toute l’Europe.
+                            <p>ExtraPlay est une plateforme 100 % en ligne, accessible partout où une connexion Internet est disponible. Pas besoin de se déplacer : jouez depuis chez vous, au bureau ou en déplacement !
                             </p>
                         </div>
                     </div>
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Qui sélectionne vos produits ? </h3>
+                            <h3>Comment choisissez-vous les jeux disponibles ?
+                            </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Tous nos produits sont choisis par des experts passionnés de volley, en collaboration avec des clubs et des joueurs professionnels.</p>
+                            <p>Nous collaborons avec des développeurs passionnés et testons chaque jeu pour garantir une expérience de qualité. Vos retours sont essentiels pour nous aider à sélectionner et améliorer nos jeux.</p>
                         </div>
                     </div>
 
@@ -250,36 +263,42 @@
 
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Comment puis-je communiquer avec votre équipe ?
+                            <h3>Comment puis-je contacter l’équipe ExtraPlay ?
+
                             </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Vous pouvez nous joindre via le chat en ligne, par e-mail ou sur nos réseaux sociaux.
+                            <p>Vous pouvez nous écrire via notre formulaire de contact sur la page "Contactez-nous" ou nous envoyer un email à support@extraplay.com. Nous répondrons dans les 24 heures.
+
 
                             </p>
                         </div>
                     </div>
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Comment passer une commande ?
+                            <h3>Comment m’inscrire sur ExtraPlay ?
+
                             </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Rendez-vous simplement sur notre site, ajoutez vos articles au panier et suivez les étapes pour finaliser votre commande.
+                            <p>Rendez-vous sur notre page d'inscription, créez un compte en quelques clics, et commencez à jouer gratuitement. Un abonnement premium est également disponible pour accéder à des contenus exclusifs.
 
                             </p>
                         </div>
                     </div>
                     <div class="q-a-container">
                         <div class="question">
-                            <h3>Comment puis-je poser des questions avant d’acheter ?
+                            <h3>Puis-je poser des questions avant de m’inscrire ?
+
                             </h3>
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Utilisez notre formulaire de contact ou appelez notre service client pour toute question.
+                            <p>Bien sûr ! Nous sommes là pour répondre à toutes vos interrogations. Utilisez notre section FAQ ou contactez directement notre équipe.
+
+
 
                             </p>
                         </div>
@@ -301,7 +320,7 @@
                             <span class="plus">+</span>
                         </div>
                         <div class="answer">
-                            <p>Rendez-vous dans la section "Mon Compte" pour gérer vos abonnements. Vous pouvez mettre en pause ou annuler à tout moment. </p>
+                            <p>Vous pouvez gérer votre abonnement à tout moment dans votre espace personnel. Il suffit de cliquer sur l’onglet "Abonnement" et de sélectionner l’option souhaitée : pause, annulation ou modification.</p>
                         </div>
                     </div>
                     <div class="q-a-container">
