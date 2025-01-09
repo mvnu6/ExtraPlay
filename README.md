@@ -44,7 +44,10 @@ pgAdmin est accessible via votre navigateur : [http://localhost:8081](http://loc
 
 ```
 projet/
-├── public/               # Fichiers publics
+├── public/                  # Fichiers publics
+    ├── image/
+    ├── js/
+        └── app.js
 │   ├── index.php        # Point d'entrée
 │   ├── .htaccess
 │   └── css/
@@ -54,8 +57,15 @@ projet/
 │   ├── Models/         # Modèles
 │   └── Database/       # Configuration BD
 ├── templates/           # Templates
-│   ├── layout.php      # Template principal
-│   └── tasks/          # Templates des tâches
+│   ├── games/
+        └── quiz.php
+    ├── partials/
+        └── footer.php
+        └── header.php
+    ├── games.php
+    ├── home.php
+    ├── register.php
+    └── login.php
 ├── composer.json        # Dépendances PHP
 ├── Dockerfile          # Configuration Docker
 ├── docker compose.yml  # Configuration Docker Compose
