@@ -1,3 +1,10 @@
+<?php
+
+// Vérifier si l'utilisateur est connecté
+if (isset($_SESSION['username'])) {
+    echo "<h1>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " !</h1>";
+}
+?>
 <main class="main-content">
     <h1>Liste des jeux</h1>
     <div class="row">

@@ -14,22 +14,37 @@ class GameController
     }
 
     // Afficher la liste des jeux
-    public function listGames()
+    public function games()
     {
-        $games = $this->gameModel->getAllGames();
-        require_once __DIR__ . '/../views/gameList.php';
-    }
 
-    // Charger un jeu spécifique
-    public function loadGame($id)
+
+        $games = $this->gameModel->getAllGames();
+
+        // Inclure les vues nécessaires
+        require __DIR__ . '/../../templates/partials/header.php';
+        require __DIR__ . '/../../templates/games.php';
+        require __DIR__ . '/../../templates/partials/footer.php';
+    }
+    public function playGame()
     {
-        $game = $this->gameModel->getGameById($id);
-        if ($game['type'] === 'quiz') {
-            require_once __DIR__ . '/../views/quizGame.php';
-        } elseif ($game['type'] === 'memo') {
-            require_once __DIR__ . '/../views/memoGame.php';
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: /login');
+            exit;
+        }
+
+        // Récupérer l'ID du jeu sélectionné
+        $gameId = $_GET['game_id'] ?? null;
+
+        if ($gameId) {
+            // Redirige vers la page du jeu, par exemple dans le dossier /games
+            header("Location: /games/quiz.php?game_id={$gameId}");
+            exit;
         } else {
-            echo "Jeu non reconnu.";
+            echo "Aucun jeu sélectionné.";
         }
     }
 }
