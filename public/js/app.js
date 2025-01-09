@@ -16,23 +16,6 @@ gsap.utils.toArray(".slide-txt div").forEach((text, index) => {
 });
 
 // Timeline pour les images
-// let imageTimeline = gsap.timeline({ repeat: -1 });
-// gsap.utils.toArray(".slide-img img").forEach((image, index) => {
-//   imageTimeline.to(image, {
-//     x: 0,
-//     duration: 1,
-//   }, index * 1);
-  
-//   if (index !== 3) {
-//     imageTimeline.to(image, {
-//       left: "0rem",
-//       duration: 1,
-//     }, index * 1);
-//   }
-// });
-
-
-// Timeline pour les images
 let imageTimeline = gsap.timeline({ repeat: -1 });
 gsap.utils.toArray(".slide-img img").forEach((image, index) => {
   imageTimeline.to(image, {

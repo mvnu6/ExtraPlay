@@ -85,14 +85,14 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </section>
 
-    <!-- Chiffres -->
+    <!-- Collection de jeux -->
     <section class="statistics-section">
         <h1>Liste des jeux</h1>
         <div class="row">
             <?php foreach ($games as $game): ?>
                 <div class="">
                     <div class="game-image">
-                        <a href="/games/quiz" class="game-hover-overlay-link">
+                        <a href="<?= isset($_SESSION['user_id']) ? $game['game_path'] : '/login' ?>" class="game-hover-overlay-link">
                             <img src="<?= $game['image_path']; ?>"  alt="<?= $game['name']; ?>" class="img-fluid">
                         </a>
                     </div>
@@ -105,7 +105,8 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
 
                     <div class="game-action-buttons">
-                        <a href="<?= $game['game_path']; ?>" class="btn btn-primary">
+                        <!-- Bouton Jouer -->
+                        <a href="<?= isset($_SESSION['user_id']) ? $game['game_path'] : '/login' ?>" class="btn btn-primary">
                             <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
                         </a>
                     </div>
