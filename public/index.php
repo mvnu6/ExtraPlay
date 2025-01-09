@@ -6,10 +6,12 @@ if (session_status() === PHP_SESSION_NONE) {
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\MainController;
+use App\Controllers\GameController;
 
 ob_start();
 
 $controller = new MainController();
+$gamecontroller = new GameController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -28,6 +30,9 @@ switch ($path) {
         break;
     case '/register':
         $controller->register();
+        break;
+    case '/games/quiz':
+        $gamecontroller->quiz();
         break;
 
     case '/games': // Nouvelle route

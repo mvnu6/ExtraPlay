@@ -16,7 +16,8 @@ class MainController
 
     public function index()
     {
-        $game = $this->gameModel->getAllGames();
+        $games = $this->gameModel->getAllGames();
+        
         require __DIR__ . '/../../templates/partials/header.php';
         require __DIR__ . '/../../templates/home.php';
         require __DIR__ . '/../../templates/partials/footer.php';
@@ -66,6 +67,9 @@ class MainController
 
     public function login()
     {
+        if(isset($_SESSION['username'])){
+            header('Location: /games');
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';

@@ -7,8 +7,6 @@ if (!isset($_SESSION['user_id'])) {
   header('Location: /login');
   exit;
 }
-
-echo "<h1>Bienvenue au Quiz, {$_SESSION['username']}!</h1>";
 ?>
 
 

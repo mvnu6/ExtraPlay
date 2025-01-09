@@ -20,6 +20,9 @@ class GameController
         require_once __DIR__ . '/../views/gameList.php';
     }
 
+    public function quiz(){
+        require __DIR__ . '/../../templates/games/quiz.php';
+    }
     // Charger un jeu spécifique
     public function loadGame($id)
     {

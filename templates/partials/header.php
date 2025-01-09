@@ -27,7 +27,7 @@
                 
                     if (isset($_SESSION['username'])) {
                         // Si l'utilisateur est connecté, affiche "Se déconnecter"
-                        echo '<a href="/logout" class="account" id="logout">Se déconnecter</a>';
+                        echo '<a href="/logout" class="account" id="login">Se déconnecter</a>';
                     } else {
                         // Si l'utilisateur n'est pas connecté, affiche "Inscris-toi"
                         echo '<a href="/login" class="account" id="login">Inscris-toi</a>';
