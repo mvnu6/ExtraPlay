@@ -19,12 +19,14 @@ if (isset($_SESSION['username'])) {
 
       <!-- Cartes ! -->
       <div class="grid">
+      <a href="<?= $game['game_path'] ?>">
         <div class="card-game">
           
           <a href="<?= $game['game_path'] ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
           <p>
-            Standard chunk of Lorem Ipsum used since the 1500s is showed below
-            for those interested.
+          Devinez le mot caché en utilisant logique et déductions ! Un défi rapide et captivant.
+
+
           </p>
           <div class="shine"></div>
           <div class="background">
@@ -35,6 +37,7 @@ if (isset($_SESSION['username'])) {
             <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
           </a>
         </div>
+      </a>
       </div>
 
     <?php endforeach; ?>

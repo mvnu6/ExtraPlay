@@ -80,7 +80,7 @@
     </section>
 
     <!-- Collection de jeux -->
-    <section class="statistics-section">
+    <section class="games-list">
         <h1>Liste des jeux</h1>
         <div class="games games-home">
 
@@ -198,8 +198,8 @@
 
     <section class="review-section">
         <div class="review">
-            <h4>Confié par plus de 50 clubs et équipes</h4>
-            <p>Si vous cherchez l'équipement parfait pour votre équipe, alola. est votre première étape. Nous avons travaillé avec de nombreux clubs et joueurs de volley à travers divers niveaux et avons toujours été impressionnés par la qualité des produits et des services. Nos équipements sont performants, au design soigné et adaptés à tous les besoins des joueurs.</p>
+            <h4>Confié par plus de 50 clubs et équipes 👌</h4>
+            <p>"Si vous cherchez un jeu captivant qui mettra vos méninges à l'épreuve, Motus sur ExtraPlay est un incontournable ! Ce classique revisité est parfait pour tous les amateurs de réflexion et de défis linguistiques. Chaque partie est un mélange de stratégie et d'intuition, avec une interface fluide et des graphismes épurés qui rendent l'expérience encore plus agréable."</p>
 
             <div class="icons">
                 <i class="fa-solid fa-star"></i>
