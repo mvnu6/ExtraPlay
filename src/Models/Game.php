@@ -15,22 +15,12 @@ class Game
     }
 
     /**
-     * Récupérer tous les jeux.
+     * Récupérer un jeu par son ID.
      */
     public function getAllGames()
     {
         $stmt = $this->db->query('SELECT * FROM Games ORDER BY id_game DESC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    /**
-     * Récupérer un jeu par son ID.
-     */
-    public function getGameById($id)
-    {
-        $stmt = $this->db->prepare('SELECT * FROM Games WHERE id_game = ?');
-        $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     /**
      * Mettre à jour un jeu existant.

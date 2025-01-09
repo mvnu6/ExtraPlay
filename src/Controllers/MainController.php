@@ -81,7 +81,7 @@ class MainController
                 $_SESSION['user_id'] = $user['id_user'];
                 $_SESSION['username'] = $user['username'];
 
-                header('Location: /');
+                header('Location: /games');
                 exit;
             } else {
                 $error = "Email ou mot de passe incorrect.";
@@ -97,5 +97,39 @@ class MainController
         session_destroy();
         header("Location: /");
         exit;
+    }
+
+    public function games()
+    {
+
+
+        $games = $this->gameModel->getAllGames();
+
+        // Inclure les vues nécessaires
+        require __DIR__ . '/../../templates/partials/header.php';
+        require __DIR__ . '/../../templates/games.php';
+        require __DIR__ . '/../../templates/partials/footer.php';
+    }
+    public function playGame()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: /login');
+            exit;
+        }
+
+        // Récupérer l'ID du jeu sélectionné
+        $gameId = $_GET['game_id'] ?? null;
+
+        if ($gameId) {
+            // Redirige vers la page du jeu, par exemple dans le dossier /games
+            header("Location: /games/quiz.php?game_id={$gameId}");
+            exit;
+        } else {
+            echo "Aucun jeu sélectionné.";
+        }
     }
 }

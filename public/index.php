@@ -6,6 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\MainController;
+
 ob_start();
 
 $controller = new MainController();
@@ -17,29 +18,32 @@ switch ($path) {
         $controller->index();
         $controller->footer();
         break;
-    case '/create':
-        $controller->create();
-        break;
+
     case '/logout':
         $controller->logout();
         break;
-        
-    case '/toggle':
-        $controller->toggle($_GET['id'] ?? 0);
-        break;
+
     case '/login':
         $controller->login();
         break;
     case '/register':
         $controller->register();
         break;
-    case '/delete':
-        $controller->delete($_GET['id'] ?? 0);
+
+    case '/games': // Nouvelle route
+        $controller->games(); // Appelle la méthode games() du contrôleur
         break;
     default:
         http_response_code(404);
-        echo "Page not found";
-      
-        ob_end_flush();
+        echo "Page cheh";
+        break;
+        $gameController = new GameController();
 
+        // Liste des jeux
+        $router->get('/games', [$gameController, 'listGames']);
+
+        // Charger un jeu spécifique
+        $router->get('/game/:id', [$gameController, 'loadGame']);
 }
+
+ob_end_flush();

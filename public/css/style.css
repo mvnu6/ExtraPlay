@@ -258,10 +258,10 @@ main i{
     text-align: center;
 
 }
+.btn-2{background-image: linear-gradient(to right, #EB3349 0%, #F45C43  51%, #EB3349  100%)}
 .btn-2 {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #f1c40f;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -323,6 +323,7 @@ main i{
     font-size: var(--small);
     line-height: 1.4;
     margin-top:20em;
+    
     
 }
 
