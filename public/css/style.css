@@ -414,8 +414,15 @@ main i{
 
 /* ----- */
 
-/* Chiffres / Statistiques */
+/* Games */
 
+.games{
+    display: flex;
+}
+.games img{
+    max-width: 250px;
+    max-height: 250px;
+}
 .statistics-section h1{
     font-size: var(--x-large);
     margin-left: 2.6em;
@@ -464,6 +471,9 @@ main i{
     /* line-height: 12px; */
     font-size: var(--x-small);
 }
+
+
+
     /* Avantages */
 
 .main-avantages article{

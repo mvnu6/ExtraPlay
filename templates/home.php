@@ -88,7 +88,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <!-- Collection de jeux -->
     <section class="statistics-section">
         <h1>Liste des jeux</h1>
-        <div class="row">
+        <div class="games">
             <?php foreach ($games as $game): ?>
                 <div class="">
                     <div class="game-image">

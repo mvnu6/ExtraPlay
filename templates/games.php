@@ -14,12 +14,12 @@ if (isset($_SESSION['username'])) {
 ?>  
 <main class="main-content">
     <h1>Liste des jeux</h1>
-    <div class="row">
+    <div class="games">
         <?php foreach ($games as $game): ?>
             <div class="">
                 <div class="game-image">
                     <a href="<?=$game['game_path']?>" class="game-hover-overlay-link">
-                        <img src="/path/to/image/<?= $game['id_game']; ?>.jpg" alt="<?= $game['name']; ?>" class="img-fluid">
+                        <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
                     </a>
                 </div>
                 
