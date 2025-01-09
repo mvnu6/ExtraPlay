@@ -57,15 +57,15 @@ projet/
 │   ├── Models/         # Modèles
 │   └── Database/       # Configuration BD
 ├── templates/           # Templates
-│   ├── games/
+│   ├── games/           # Templates pour les jeux
         └── quiz.php
     ├── partials/
         └── footer.php
         └── header.php
-    ├── games.php
-    ├── home.php
-    ├── register.php
-    └── login.php
+    ├── games.php       # affichage des jeux
+    ├── home.php        # page d'accueil
+    ├── register.php    # inscription
+    └── login.php       # connexion
 ├── composer.json        # Dépendances PHP
 ├── Dockerfile          # Configuration Docker
 ├── docker compose.yml  # Configuration Docker Compose
@@ -96,13 +96,6 @@ environment:
 La base de données PostgreSQL est initialisée avec la structure suivante :
 
 ```sql
-CREATE TABLE IF NOT EXISTS tasks (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    completed BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 -- Supprimer la table utilisateurs si elle existe
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE IF NOT EXISTS users (
@@ -126,6 +119,8 @@ CREATE TABLE IF NOT EXISTS Games (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     id_category INT,
+    image_path VARCHAR(255) NOT NULL,
+    game_path VARCHAR(255),
     FOREIGN KEY (id_category) REFERENCES category(id_category) ON DELETE CASCADE
 );
 
@@ -151,6 +146,12 @@ CREATE TABLE IF NOT EXISTS subscription (
     id_game INT,
     FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
+
+INSERT INTO Games (name, description, id_category, image_path, game_path)
+VALUES
+('Motus', 'A fun game', 1, '/images/motus1.png', '/games/motus'),
+('Quiz', 'An adventure game', 2, '/images/quiz1.jpg', '/games/quiz'),
+('Memory Game', 'An adventure game', 2, '/images/cardmemory3.png', '/games/memory')
 ```
 
 ## 🔨 Développement
@@ -206,7 +207,7 @@ docker compose restart pgadmin
 
    - Clic droit sur "Servers" → "Register" → "Server"
    - Dans l'onglet "General" :
-     - Name: TodoList (ou autre nom de votre choix)
+     - Name: extraplay
    - Dans l'onglet "Connection" :
      - Host name/address: db
      - Port: 5432
