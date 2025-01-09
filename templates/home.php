@@ -1,9 +1,11 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
 <div class="svg-bg">
+    <?php
+
+    // Vérifier si l'utilisateur est connecté
+    if (isset($_SESSION['username'])) {
+        echo "<h1>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " !</h1>";
+    }
+    ?>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2315.03" height="9697.145" viewBox="0 0 2315.03 9697.145">
@@ -40,11 +42,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 <img src="/images/quiz1.jpg" alt="MARCHE PAS">
                 <img src="/images/cardmemory3.png" alt="MARCHE PAS">
             </section>
-            <!-- <section class="txt-2">
-                <p>
-            Commencez dès maintenant à parcourir notre catalogue et trouvez l’équipement parfait pour votre prochain smash !
-                </p>
-            </section>                 -->
         </section>
 
     </section>
@@ -54,7 +51,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <p class="headline">Alola. vous offre un choix rapide, fiable et
 
                 <span>
-                    de qualité supérieure pour équiper joueurs et équipes avec les meilleurs produits.
+                    venez jouer à nos jeux !
                 </span>
             </p>
             <article class="container-cards">
@@ -63,14 +60,14 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="card">
                         <div class="icon"><i class="fa-solid fa-volleyball"></i></div>
                         <div class="title">Large Choix & Flexibilité</div>
-                        <p class="desc">Un catalogue sur-mesure pour tous les passionnés de volley : ballons, chaussures, vêtements et plus.
+                        <p class="desc">Un catalogue sur-mesure pour tous les passionnés de jeux ludique
                         </p>
                     </div>
                     <div class="card">
                         <div class="icon"><i class="fa-solid fa-check"></i></div>
                         <div class="title">Jouez sans Attendre
                         </div>
-                        <p class="desc">Accédez à nos produits dès aujourd’hui et équipez-vous rapidement avec des articles prêts à améliorer votre jeu.
+                        <p class="desc">Accédez à nos produits dès aujourd’hui.
                         </p>
                     </div>
                     <div class="card">
@@ -93,13 +90,13 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="">
                     <div class="game-image">
                         <a href="<?= isset($_SESSION['user_id']) ? $game['game_path'] : '/login' ?>" class="game-hover-overlay-link">
-                            <img src="<?= $game['image_path']; ?>"  alt="<?= $game['name']; ?>" class="img-fluid">
+                            <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
                         </a>
                     </div>
 
                     <div class="py-2">
                         <h3 class="h6 text-uppercase mb-1">
-                            <a href="<?= $game['game_path']; ?>"  class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
+                            <a href="<?= $game['game_path']; ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
                         </h3>
                         <p class="text-muted"><?= htmlspecialchars($game['description']); ?></p>
                     </div>
