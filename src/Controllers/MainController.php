@@ -18,14 +18,14 @@ class MainController
     {
         $games = $this->gameModel->getAllGames();
         
-        require __DIR__ . '/../../templates/partials/header.php';
-        require __DIR__ . '/../../templates/home.php';
-        require __DIR__ . '/../../templates/partials/footer.php';
+        require_once __DIR__ . '/../../templates/partials/header.php';
+        require_once __DIR__ . '/../../templates/home.php';
+        require_once __DIR__ . '/../../templates/partials/footer.php';
     }
 
     public function footer()
     {
-        require __DIR__ . '/../../templates/partials/footer.php';
+        require_once __DIR__ . '/../../templates/partials/footer.php';
     }
 
     public function register()
@@ -52,7 +52,7 @@ class MainController
                         'password' => $hashed_password
                     ]);
 
-                    header('Location: /login');
+                    header('Location: /games');
                     exit;
                 } else {
                     $error = "L'email est déjà utilisé.";
@@ -62,7 +62,7 @@ class MainController
             }
         }
 
-        require __DIR__ . '/../../templates/register.php';
+        require_once __DIR__ . '/../../templates/register.php';
     }
 
     public function login()
@@ -92,7 +92,7 @@ class MainController
             }
         }
 
-        require __DIR__ . '/../../templates/login.php';
+        require_once __DIR__ . '/../../templates/login.php';
     }
 
     public function logout()
@@ -110,9 +110,9 @@ class MainController
         $games = $this->gameModel->getAllGames();
 
         // Inclure les vues nécessaires
-        require __DIR__ . '/../../templates/partials/header.php';
-        require __DIR__ . '/../../templates/games.php';
-        require __DIR__ . '/../../templates/partials/footer.php';
+        require_once __DIR__ . '/../../templates/partials/header.php';
+        require_once __DIR__ . '/../../templates/games.php';
+        require_once __DIR__ . '/../../templates/partials/footer.php';
     }
     public function playGame()
     {
