@@ -27,7 +27,9 @@
                 </article>
 
                 <h1>Prêt </br> à jouer ?</h1>
+                <a href="/games">
                 <button class="btn1">Jouer <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
             </section>
 
             <section class="slide-img">
@@ -78,33 +80,33 @@
     <!-- Collection de jeux -->
     <section class="statistics-section">
         <h1>Liste des jeux</h1>
-        <div class="games">
+        <div class="games games-home">
 
-    <?php foreach ($games as $game): ?>
-      
+            <?php foreach ($games as $game): ?>
 
-      <!-- Cartes ! -->
-      <div class="grid">
-        <div class="card-game">
-          
-          <a href="<?= $game['game_path'] ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
-          <p>
-            Standard chunk of Lorem Ipsum used since the 1500s is showed below
-            for those interested.
-          </p>
-          <div class="shine"></div>
-          <div class="background">
-            <a href="<?= $game['game_path'] ?>" class="game-hover-overlay-link">
-              <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
-          </div>
-          <a href="<?= $game['game_path'] ?>" class="btn btn-primary">
-            <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
-          </a>
+
+                <!-- Cartes ! -->
+                <div class="grid">
+                    <div class="card-game">
+
+                        <a href="<?= $game['game_path'] ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
+                        <p>
+                            Standard chunk of Lorem Ipsum used since the 1500s is showed below
+                            for those interested.
+                        </p>
+                        <div class="shine"></div>
+                        <div class="background">
+                            <a href="<?= $game['game_path'] ?>" class="game-hover-overlay-link">
+                                <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
+                        </div>
+                        <a href="<?= $game['game_path'] ?>" class="btn btn-primary">
+                            <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
+                        </a>
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
         </div>
-      </div>
-
-    <?php endforeach; ?>
-  </div>
     </section>
     <!-- Plan -->
     <section class="plans-section">

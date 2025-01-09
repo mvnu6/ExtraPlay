@@ -326,6 +326,7 @@ main i {
   /* border: solid red; */
 }
 .slide-img img {
+  border-radius: 10px;
   position: absolute;
   left: 100%;
   top: 0;
@@ -422,6 +423,11 @@ main i {
 .games img {
   max-width: 250px;
   max-height: 250px;
+}
+.games-home{
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  justify-content: center;
 }
 .statistics-section h1 {
   font-size: var(--x-large);
