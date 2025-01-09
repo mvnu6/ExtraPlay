@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/partials/header.php'; ?>
 <main class="main-content">
     <h1>Connexion</h1>
     <!-- Affichage des erreurs -->

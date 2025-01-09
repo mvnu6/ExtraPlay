@@ -12,7 +12,7 @@ class Database
     private function __construct()
     {
         $host = 'db'; // ou remplacez par l'adresse de votre serveur
-        $dbname = 'extraplay';
+        $dbname = 'Extraplay';
         $user = 'postgres';
         $pass = 'password';
 

@@ -1,4 +1,3 @@
-<?php require __DIR__ . '/partials/header.php'; ?>
 <main class="main-content">
 
     <body>
