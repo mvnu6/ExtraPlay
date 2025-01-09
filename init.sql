@@ -11,12 +11,12 @@ CREATE TABLE IF NOT EXISTS Users (
     password VARCHAR(255) NOT NULL,
 );
 
-DROP TABLE IF EXISTS category;
+-- Supprimer la table category si elle existe
+DROP TABLE IF EXISTS category CASCADE;
 CREATE TABLE IF NOT EXISTS category (
-    id_category INT AUTO_INCREMENT PRIMARY KEY,
-    name_category VARCHAR(50) NOT NULL,
+    id_category SERIAL PRIMARY KEY,
+    name_category VARCHAR(50) NOT NULL
 );
-
 
 DROP TABLE IF EXISTS Games;
 CREATE TABLE IF NOT EXISTS Games (
@@ -99,4 +99,15 @@ CREATE TABLE IF NOT EXISTS subscription (
     id_game INT,
     FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
+
+-- Ajouter une colonne pour le chemin de l'image
+ALTER TABLE Games ADD COLUMN image_path VARCHAR(255);
+
+-- Ajouter une colonne pour le chemin du jeu
+ALTER TABLE Games ADD COLUMN game_path VARCHAR(255);
+INSERT INTO Games (name, description, id_category, image_path, game_path)
+VALUES 
+('Motus', 'A fun game', 1, '/images/motus1.png', '/games/motus'),
+('Quiz', 'An adventure game', 2, '/images/quiz1.jpg', '/games/quiz'),
+('Memory Game', 'An adventure game', 2, '/images/cardmemory3.png', '/games/memory')
 >>>>>>> b8469b1de059af21d89df48e74967a5c9c2f0fec
