@@ -964,20 +964,27 @@ main i {
 }
 
 /* Avis */
-
 .review-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15em 0;
+    text-align: center; /* Centrer tout le contenu */
+    margin: 40px auto;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    padding: 2em;
+    border-radius: 15px;
+    color: white;
 }
-.review {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
+.review{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+.icons {
+    font-size: 30px;
+    color: gold; /* Couleur des étoiles */
+    margin: 10px 0;
 }
 
 .review p {
@@ -1001,6 +1008,101 @@ main i {
 }
 .review span {
   font-size: var(--x-small);
+}
+
+/* Mettre un Avis */
+#stars {
+    display: flex;
+    direction: row;
+}
+
+#stars input[type="radio"] {
+    display: none;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: white; /* Étoiles blanches par défaut */
+}
+
+#stars input[type="radio"]:checked ~ .star {
+    color: gold;  /* Mettre en or les étoiles sélectionnées */
+}
+
+#stars input[type="radio"]:checked:nth-child(1) ~ .star:nth-child(1),
+#stars input[type="radio"]:checked:nth-child(2) ~ .star:nth-child(2),
+#stars input[type="radio"]:checked:nth-child(3) ~ .star:nth-child(3),
+#stars input[type="radio"]:checked:nth-child(4) ~ .star:nth-child(4),
+#stars input[type="radio"]:checked:nth-child(5) ~ .star:nth-child(5) {
+    color: gold;
+}
+
+#stars input[type="radio"]:not(:checked) ~ .star {
+    color: white;
+}
+.star-rating {
+    direction: row;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;  /* Étoiles blanches par défaut */
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: gold;  /* Toutes les étoiles après l'étoile sélectionnée deviennent dorées */
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: gold;
+}
+
+.star-rating input[type="radio"]:not(:checked) ~ label {
+    color: white;  /* Les étoiles non sélectionnées restent blanches */
+}
+
+
+/* Style du lien "Laisser un avis" */
+/* Style pour la section d'avis */
+/* .review-section {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+} */
+
+/* Style pour les icônes des étoiles */
+.icons {
+    font-size: 30px;
+    color: gold; /* Couleur des étoiles */
+    margin: 10px 0;
+}
+
+/* Style pour le bouton "Laisser un avis" */
+.leave-review-link {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px; /* Espacement entre les étoiles et le bouton */
+}
+
+.leave-review-link:hover {
+    background-color: #e04f53;
 }
 /* Foire aux questions */
 

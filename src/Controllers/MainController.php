@@ -52,7 +52,7 @@ class MainController
                         'password' => $hashed_password
                     ]);
 
-                    header('Location: /login');
+                    header('Location: /games');
                     exit;
                 } else {
                     $error = "L'email est déjà utilisé.";
@@ -92,7 +92,7 @@ class MainController
             }
         }
 
-        require __DIR__ . '/../../templates/login.php';
+        require_once __DIR__ . '/../../templates/login.php';
     }
 
     public function logout()

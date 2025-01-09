@@ -206,6 +206,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <i class="fa-solid fa-star"></i>
             </div>
         </div>
+        <a href="/reviews/create" class="leave-review-link">Laisser un avis</a>
     </section>
     <!-- Foire aux questions -->
     <div class="faq-wrapper">

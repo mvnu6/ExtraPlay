@@ -74,6 +74,8 @@ CREATE TABLE IF NOT EXISTS Games (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     id_category INT,
+    game_path VARCHAR(255),
+    image_path VARCHAR(255),
     FOREIGN KEY (id_category) REFERENCES category(id_category) ON DELETE CASCADE
 );
 
@@ -100,11 +102,11 @@ CREATE TABLE IF NOT EXISTS subscription (
     FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
 
--- Ajouter une colonne pour le chemin de l'image
-ALTER TABLE Games ADD COLUMN image_path VARCHAR(255);
 
--- Ajouter une colonne pour le chemin du jeu
-ALTER TABLE Games ADD COLUMN game_path VARCHAR(255);
+INSERT INTO category (name_category) VALUES
+('Action'),
+('Adventure'),
+('Puzzle');
 INSERT INTO Games (name, description, id_category, image_path, game_path)
 VALUES 
 ('Motus', 'A fun game', 1, '/images/motus1.png', '/games/motus'),
