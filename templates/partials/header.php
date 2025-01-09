@@ -23,8 +23,17 @@
                 
                 <article class="right-side redirection">
                     <section>
-                        <a href="/login" class="account" id="login">Inscris-toi</a>
-                        <a href="/catalogue/produits" class="account" id="register">Jouer</a>
+                    <?php
+                
+                    if (isset($_SESSION['username'])) {
+                        // Si l'utilisateur est connecté, affiche "Se déconnecter"
+                        echo '<a href="/logout" class="account" id="logout">Se déconnecter</a>';
+                    } else {
+                        // Si l'utilisateur n'est pas connecté, affiche "Inscris-toi"
+                        echo '<a href="/login" class="account" id="login">Inscris-toi</a>';
+                    }
+                    ?>
+                        <a href="/login" class="account" id="register">Jouer</a>
                     </section>
                     
                 </article>
