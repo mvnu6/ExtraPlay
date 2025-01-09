@@ -11,6 +11,7 @@ class GameController
     public function __construct()
     {
         $this->gameModel = new Game();
+        require_once __DIR__ . '/../../templates/partials/header.php';
     }
 
     // Afficher la liste des jeux
@@ -21,7 +22,13 @@ class GameController
     }
 
     public function quiz(){
-        require __DIR__ . '/../../templates/games/quiz.php';
+        require_once __DIR__ . '/../../templates/games/quiz.php';
+    }
+    public function motus(){
+        require_once __DIR__ . '/../../templates/games/motus.php';
+    }
+    public function memory(){
+        require_once __DIR__ . '/../../templates/games/memory.php';
     }
     // Charger un jeu spécifique
     public function loadGame($id)

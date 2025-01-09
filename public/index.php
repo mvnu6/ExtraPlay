@@ -34,6 +34,12 @@ switch ($path) {
     case '/games/quiz':
         $gamecontroller->quiz();
         break;
+    case '/games/motus':
+        $gamecontroller->motus();
+        break;
+    case '/games/memory':
+        $gamecontroller->memory();
+        break;
 
     case '/games': // Nouvelle route
         $controller->games(); // Appelle la méthode games() du contrôleur

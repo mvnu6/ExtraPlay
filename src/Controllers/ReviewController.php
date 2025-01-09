@@ -12,14 +12,14 @@ class ReviewController
     public function index()
     {
         $reviews = Review::getAllReviews();
-        require __DIR__ . '/../../templates/reviews/index.php';
+        require_once __DIR__ . '/../../templates/reviews/index.php';
     }
 
     // Afficher une review spécifique
     public function show($id_review)
     {
         $review = Review::getReviewById($id_review);
-        require __DIR__ . '/../../templates/reviews/show.php';
+        require_once __DIR__ . '/../../templates/reviews/show.php';
     }
 
     // Ajouter une review

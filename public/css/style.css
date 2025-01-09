@@ -571,6 +571,7 @@ main i {
   /* border: solid red; */
 }
 
+
 .card-game {
   display: flex;
   flex-direction: column;
@@ -634,6 +635,7 @@ main i {
     position: absolute;
     inset: 0;
     overflow: hidden;
+    
     -webkit-mask-image: radial-gradient(
       circle at 60% 5%,
       black 0%,
@@ -791,6 +793,10 @@ main i {
 
 .card-game a i{
     padding-right: .5rem;
+}
+.card-game .background img{
+    background-size: cover;
+    background-repeat: repeat;
 }
 .grid a {
   z-index: 2;
@@ -1045,6 +1051,9 @@ main i {
   cursor: pointer;
 }
 
+.fa-arrow-rotate-right{
+    color: white;
+}
 .plus {
   font-size: var(--small);
 }
