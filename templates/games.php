@@ -3,6 +3,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 // Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['username'])) {
+    header('Location: /login');
+    exit;
+}
 if (isset($_SESSION['username'])) {
     echo "<h1>Bienvenue, " . htmlspecialchars($_SESSION['username']) . " !</h1>";
     
@@ -14,20 +18,20 @@ if (isset($_SESSION['username'])) {
         <?php foreach ($games as $game): ?>
             <div class="">
                 <div class="game-image">
-                    <a href="/game/<?= $game['id_game']; ?>" class="game-hover-overlay-link">
+                    <a href="<?=$game['game_path']?>" class="game-hover-overlay-link">
                         <img src="/path/to/image/<?= $game['id_game']; ?>.jpg" alt="<?= $game['name']; ?>" class="img-fluid">
                     </a>
                 </div>
                 
                 <div class="py-2">
                     <h3 class="h6 text-uppercase mb-1">
-                        <a href="/game/<?= $game['id_game']; ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
+                        <a href="<?=$game['game_path']?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
                     </h3>
                     <p class="text-muted"><?= htmlspecialchars($game['description']); ?></p>
                 </div>
 
                 <div class="game-action-buttons">
-                    <a href="/quiz/<?= $game['id_game']; ?>" class="btn btn-primary">
+                    <a href="<?=$game['game_path']?>" class="btn btn-primary">
                         <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
                     </a>
                 </div>
