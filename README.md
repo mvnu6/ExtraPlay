@@ -45,13 +45,14 @@ pgAdmin est accessible via votre navigateur : [http://localhost:8081](http://loc
 ```
 projet/
 ├── public/                  # Fichiers publics
-    ├── image/
+    ├── images/
     ├── js/
         └── app.js
 │   ├── index.php        # Point d'entrée
 │   ├── .htaccess
 │   └── css/
 │       └── style.css    # Styles CSS
+├── rapport/             # Rapports
 ├── src/                 # Code source
 │   ├── Controllers/     # Contrôleurs
 │   ├── Models/         # Modèles
@@ -59,9 +60,16 @@ projet/
 ├── templates/           # Templates
 │   ├── games/           # Templates pour les jeux
         └── quiz.php
+        └── memo.php
+        └── motus.php
     ├── partials/
         └── footer.php
         └── header.php
+    ├── reviews/
+        └── create.php    # Formulaire de création de review
+        └── edit.php      # Formulaire d'édition de review
+        └── index.php     # Liste des reviews
+    ├── construction.php  # Template pour les pages en construction
     ├── games.php       # affichage des jeux
     ├── home.php        # page d'accueil
     ├── register.php    # inscription
@@ -78,13 +86,22 @@ projet/
 
 ```yaml
 # PostgreSQL
-environment:
-  DB_HOST: db
-  DB_PORT: 5432
-  DB_NAME: postgres
-  DB_USER: postgres
-  DB_PASSWORD: password
+ environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: password
 
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: Extraplay
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
 # pgAdmin
 environment:
   PGADMIN_DEFAULT_EMAIL: admin@admin.com
@@ -136,16 +153,10 @@ CREATE TABLE IF NOT EXISTS review (
     FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
 );
 
--- Supprimer la table subscription si elle existe
-DROP TABLE IF EXISTS subscription CASCADE;
-CREATE TABLE IF NOT EXISTS subscription (
-    id_subscription SERIAL PRIMARY KEY,
-    name_sub VARCHAR(50) NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    time INT NOT NULL, -- in days
-    id_game INT,
-    FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
-);
+INSERT INTO category (name_category) VALUES
+('Action'),
+('Adventure'),
+('Puzzle');
 
 INSERT INTO Games (name, description, id_category, image_path, game_path)
 VALUES
@@ -207,7 +218,7 @@ docker compose restart pgadmin
 
    - Clic droit sur "Servers" → "Register" → "Server"
    - Dans l'onglet "General" :
-     - Name: extraplay
+     - Name: Extraplay
    - Dans l'onglet "Connection" :
      - Host name/address: db
      - Port: 5432
