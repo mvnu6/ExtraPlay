@@ -4,7 +4,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: /login?redirect=/reviews/create');
     exit;
   }
-  ?>
+
 // Récupérer tous les jeux de la base de données
 $gameModel = new \App\Models\Game();
 $games = $gameModel->getAllGames();
