@@ -129,7 +129,7 @@
                 <div class="plan-bottom">
                     <div class="price">15€/mois</div>
                     <span>Annulez à tout moment</span>
-                    <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
+                    <button class="btn-2"><a href="/construction">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></a></button>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                 <div class="plan-bottom">
                     <div class="price">19€/mois</div>
                     <span>Annulez à tout moment</span>
-                    <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
+                    <button class="btn-2"><a href="/construction">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></a></button>
                 </div>
             </div>
 
@@ -169,7 +169,7 @@
                 <div class="plan-bottom">
                     <div class="price">25€/mois </div>
                     <span>Annulez à tout moment</span>
-                    <button class="btn-2">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></button>
+                    <button class="btn-2"><a href="/construction">Souscrire maintenant <i class="fa-solid fa-arrow-right-long arrow-none"></i></a></button>
                 </div>
             </div>
 
@@ -179,18 +179,18 @@
 </h3>
                 <p>Vous avez des questions ou souhaitez une offre sur-mesure ?
                 </p>
-                <button class="btn-1">Prenez rendez-vous<i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn-1"><a href="/construction">Prenez rendez-vous <i class="fa-solid fa-arrow-right-long"></i></a></button>
             </div>
             <div class="plan row-2 col-5">
                 <h3>Parrainez vos amis !
                 </h3>
                 <p>Recommandez-nous et gagnez 5 % de commission sur chaque inscription.</p>
-                <button class="btn-1">Rejoignez notre programme <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn-1"><a href="/construction">Rejoignez notre programme <i class="fa-solid fa-arrow-right-long"></i></a></button>
             </div>
             <div class="plan row-2 col-6">
                 <h3>Votre site manque d'énergie ?</h3>
                 <p>Besoin de conseils rapides pour améliorer votre boutique ou votre stratégie ?</p>
-                <button class="btn-1">Challengez-nous <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn-1"><a href="/construction">Challengez nous <i class="fa-solid fa-arrow-right-long"></i></a></button>
             </div>
         </div>
     </section>

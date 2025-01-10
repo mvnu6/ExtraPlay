@@ -63,10 +63,10 @@ switch ($path) {
         $id = $_GET['id'] ?? null;
         $reviewcontroller->index($id);
         break;
-
+    
     default:
         http_response_code(404);
-        echo "Page cheh";
+        $controller->construction();
         break;
         
 }

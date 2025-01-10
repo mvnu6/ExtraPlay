@@ -136,4 +136,9 @@ class MainController
         require_once __DIR__ . '/../../templates/games.php';
         require_once __DIR__ . '/../../templates/partials/footer.php';
     }
+
+    public function construction()
+    {
+        require __DIR__ . '/../../templates/construction.php';
+    }
 }
