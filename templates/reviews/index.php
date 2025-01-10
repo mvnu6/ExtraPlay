@@ -1,3 +1,10 @@
+<?php 
+if (!isset($_SESSION['username'])) {
+    header('Location: /login?redirect=/reviews');
+    exit;
+  }
+?>
+
 <?php foreach ($reviews as $review): ?>
 
     <div>

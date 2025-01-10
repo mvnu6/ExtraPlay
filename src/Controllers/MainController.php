@@ -5,35 +5,68 @@ namespace App\Controllers;
 use App\Models\game;
 use App\Database\Database;
 
-    class MainController
+class MainController
+{
+    private $gameModel;
+
+    public function __construct()
     {
-        private $gameModel;
+        $this->gameModel = new game();
+    }
 
-        public function __construct()
-        {
-            $this->gameModel = new game();
+    public function index()
+    {
+        $games = $this->gameModel->getAllGames();
+
+        require_once __DIR__ . '/../../templates/partials/header.php';
+        require_once __DIR__ . '/../../templates/home.php';
+        require_once __DIR__ . '/../../templates/partials/footer.php';
+    }
+
+    public function footer()
+    {
+        require_once __DIR__ . '/../../templates/partials/footer.php';
+    }
+
+    public function login()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = $_POST['email'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $redirect = $_GET['redirect'] ?? '/games'; // URL par défaut
+
+            $pdo = Database::getInstance()->getConnection();
+
+            $stmt = $pdo->prepare("SELECT id_user, username, password FROM users WHERE email = :email");
+            $stmt->execute(['email' => $email]);
+            $user = $stmt->fetch();
+
+            if ($user && password_verify($password, $user['password'])) {
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION['user_id'] = $user['id_user'];
+                $_SESSION['username'] = $user['username'];
+
+                // Rediriger vers l'URL précédente ou la page par défaut
+                header("Location: $redirect");
+                exit;
+            } else {
+                $error = "Email ou mot de passe incorrect.";
+            }
         }
 
-        public function index()
-        {
-            $games = $this->gameModel->getAllGames();
-            
-            require_once __DIR__ . '/../../templates/partials/header.php';
-            require_once __DIR__ . '/../../templates/home.php';
-            require_once __DIR__ . '/../../templates/partials/footer.php';
-        }
+        // Inclure la vue de connexion
+        require_once __DIR__ . '/../../templates/login.php';
+    }
 
-        public function footer()
-        {
-            require_once __DIR__ . '/../../templates/partials/footer.php';
-        }
-
-        public function register()
+    public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
+            $redirect = $_GET['redirect'] ?? '/games'; // URL par défaut
 
             if (!empty($username) && !empty($email) && !empty($password)) {
                 $pdo = Database::getInstance()->getConnection();
@@ -55,15 +88,20 @@ use App\Database\Database;
                         'password' => $hashed_password
                     ]);
 
-                     // Récupérer l'utilisateur nouvellement créé
+                    // Récupérer l'utilisateur nouvellement créé
                     $stmt = $pdo->prepare("SELECT id_user, username FROM users WHERE email = :email");
                     $stmt->execute(['email' => $email]);
                     $user = $stmt->fetch();
-                    // Enregistrer le nom d'utilisateur dans la session pour l'afficher sur la page suivante
-                    $_SESSION['username'] = $username;
+
+                    // Enregistrer l'utilisateur dans la session
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
                     $_SESSION['user_id'] = $user['id_user'];
-                    // Redirection vers la page des jeux avec le message de bienvenue
-                    header('Location: /games');
+                    $_SESSION['username'] = $user['username'];
+
+                    // Rediriger vers l'URL précédente ou la page par défaut
+                    header("Location: $redirect");
                     exit;
                 } else {
                     $error = "L'email est déjà utilisé.";
@@ -76,81 +114,26 @@ use App\Database\Database;
         require_once __DIR__ . '/../../templates/register.php';
     }
 
-        public function login()
-        {
-            if(isset($_SESSION['username'])){
-                header('Location: /games');
-            }
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $email = $_POST['email'] ?? '';
-                $password = $_POST['password'] ?? '';
-
-                $pdo = Database::getInstance()->getConnection();
-
-                $stmt = $pdo->prepare("SELECT id_user, username, password FROM users WHERE email = :email");
-                $stmt->execute(['email' => $email]);
-                $user = $stmt->fetch();
-
-                if ($user && password_verify($password, $user['password'])) {
-                    session_start();
-                    $_SESSION['user_id'] = $user['id_user'];
-                    $_SESSION['username'] = $user['username'];
-
-                    header('Location: /games');
-                    exit;
-                } else {
-                    $error = "Email ou mot de passe incorrect.";
-                }
-            }
-
-            require_once __DIR__ . '/../../templates/login.php';
-        }
-
-        public function logout()
-        {
-            session_start();
-            session_destroy();
-            header("Location: /");
-            exit;
-        }
-
-        public function games()
-        {
 
 
-            $games = $this->gameModel->getAllGames();
 
-            // Inclure les vues nécessaires
-            require_once __DIR__ . '/../../templates/partials/header.php';
-            require_once __DIR__ . '/../../templates/games.php';
-            require_once __DIR__ . '/../../templates/partials/footer.php';
-        }
-        public function playGame()
-        {
-            if (session_status() === PHP_SESSION_NONE) {
-                session_start();
-            }
-
-            if (!isset($_SESSION['username'])){
-                header('Location: /login');
-                exit;
-            }
-
-            // Récupérer l'ID du jeu sélectionné
-            $gameId = $_GET['game_id'] ?? null;
-
-            if ($gameId) {
-                // Redirige vers la page du jeu, par exemple dans le dossier /games
-                header("Location: /games/quiz.php?game_id={$gameId}");
-                exit;
-            } else {
-                echo "Aucun jeu sélectionné.";
-            }
-        }
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        header("Location: /");
+        exit;
     }
 
-    ?>
+    public function games()
+    {
 
 
+        $games = $this->gameModel->getAllGames();
 
-
+        // Inclure les vues nécessaires
+        require_once __DIR__ . '/../../templates/partials/header.php';
+        require_once __DIR__ . '/../../templates/games.php';
+        require_once __DIR__ . '/../../templates/partials/footer.php';
+    }
+}
