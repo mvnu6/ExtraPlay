@@ -4,6 +4,7 @@ $gameModel = new \App\Models\Game();
 $games = $gameModel->getAllGames();
 ?>
 
+
 <form method="POST" action="/reviews/create">
     <label for="game_name">Jeu :</label>
     <select name="id_game" id="game_name" required>

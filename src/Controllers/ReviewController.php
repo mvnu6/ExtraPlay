@@ -24,8 +24,8 @@ class ReviewController
     public function create()
 {
     // Vérifier si l'utilisateur est connecté
-    if (!isset($_SESSION['user_id'])) {
-        header('Location: /login');
+    if (!isset($_SESSION['username'])) {
+        header('Location: /login?redirect=/reviews/create');
         exit();
     }
 
@@ -36,7 +36,6 @@ class ReviewController
             echo "Veuillez sélectionner une note.";
             exit();  // Terminer l'exécution si la note est absente
         }
-
         $id_game = $_POST['id_game'];
         $username = $_POST['username'];  // Nom d'utilisateur récupéré depuis la session
         $note = $_POST['note'];  // Note en étoiles
@@ -61,7 +60,7 @@ class ReviewController
     public function edit($id_review)
     {
         // Vérifier si l'utilisateur est connecté
-        if (!isset($_SESSION['user_id'])) {
+        if (!isset($_SESSION['username'])) {
             header('Location: /login');
             exit();
         }
@@ -95,21 +94,40 @@ class ReviewController
     
 
     // Supprimer une review
-    public function delete($id_review)
+    public function delete()
     {
+        // Vérifier si l'utilisateur est connecté
         if (!isset($_SESSION['user_id'])) {
             header('Location: /login');
             exit();
         }
     
-        $review = Review::getReviewById($id_review);
-        if ($review['id_user'] == $_SESSION['user_id']) {
-            Review::deleteReview($id_review, $_SESSION['user_id']);
-        }
+        // Vérifier si l'ID de l'avis est passé en POST
+        if (isset($_POST['id_review']) && is_numeric($_POST['id_review'])) {
+            $id_review = $_POST['id_review'];
     
-        // Redirection vers la page d'accueil après la suppression
-        header('Location: /home');
-        exit();
+            // Récupérer l'avis à supprimer
+            $review = Review::getReviewById($id_review);
+    
+            // Vérifier si l'utilisateur est l'auteur de l'avis
+            if ($review['id_user'] != $_SESSION['user_id']) {
+                // Si l'utilisateur n'est pas l'auteur, rediriger vers la page des avis
+                header('Location: /reviews');
+                exit();
+            }
+    
+            // Supprimer l'avis de la base de données
+            Review::deleteReview($id_review, $_SESSION['user_id']);
+    
+            // Rediriger vers la page des avis après la suppression
+            header('Location: /reviews');
+            exit();
+        } else {
+            // Si l'ID de l'avis n'est pas valide, rediriger vers la page des avis
+            header('Location: /reviews');
+            exit();
+        }
     }
+    
     
 }

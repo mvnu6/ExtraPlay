@@ -3,8 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-if (!isset($_SESSION['user_id'])) {
-  header('Location: /login');
+if (!isset($_SESSION['username'])) {
+  header('Location: /login?redirect=/quiz');
   exit;
 }
 ?>
@@ -24,7 +24,6 @@ if (!isset($_SESSION['user_id'])) {
     html {
       height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
     }
 
     body {

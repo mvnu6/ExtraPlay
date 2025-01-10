@@ -56,6 +56,9 @@ switch ($path) {
         $id = $_GET['id'] ?? null;
         $reviewcontroller->edit($id);
         break;
+    case '/reviews/delete':
+        $reviewcontroller->delete();
+        break;
     case '/reviews/index':
         $id = $_GET['id'] ?? null;
         $reviewcontroller->index($id);
@@ -65,13 +68,7 @@ switch ($path) {
         http_response_code(404);
         echo "Page cheh";
         break;
-        // $gameController = new GameController();
-
-        // Liste des jeux
-        $router->get('/games', [$gameController, 'listGames']);
-
-        // Charger un jeu spécifique
-        $router->get('/game/:id', [$gameController, 'loadGame']);
+        
 }
 
 ob_end_flush();

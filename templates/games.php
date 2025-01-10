@@ -14,8 +14,7 @@ if (isset($_SESSION['username'])) {
 <main class="games-main">
   <h1 class="text-games">Liste des jeux 🎮</h1>
   <div class="games">
-    <?php foreach ($games as $game): ?>
-      
+    <?php foreach ($games as $game): ?>      
 
       <!-- Cartes ! -->
       <div class="grid">

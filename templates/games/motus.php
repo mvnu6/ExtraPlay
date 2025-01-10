@@ -1,3 +1,14 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+if (!isset($_SESSION['username'])) {
+  header('Location: /login?redirect=/motus');
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,8 +26,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: solid blue; */
-    /* background-color: #18191a; */
+
     -webkit-box-shadow: 0 8px 10px -6px #000000;
     -moz-box-shadow: 0 8px 10px -6px #000000;
     box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
@@ -72,8 +82,7 @@ main section div{
 }
 
 .answer-grid{
-    /* margin-top: 3em;
-    transition: all ease 4s; */
+ 
 }
 .correct{
     background-color: red;
@@ -88,18 +97,11 @@ main section div{
     border-radius: 25%;
 }
 .section-page{
-    /* border: solid black; */
     display: flex;
-    /* text-align: center; */
-    justify-content: center;
-    /* width: 50%; */
-    /* height: 10vh; */
+    justify-content: center; 
 }
 
-
-
 .section-page article.keys{
-    /* border: solid red; */
     display: flex;
     flex-wrap: wrap;
     width: 35%;
@@ -107,14 +109,12 @@ main section div{
 .section-page article img{
     width: 39px;
     margin-left: 10px;
-    /* height: 50px; */
 }
 
 .answer-guess{
     display: flex;
     justify-content: center;
     margin-top: 3em;
-    /* padding: 10px; */
 }
 
 .answer-guess input{

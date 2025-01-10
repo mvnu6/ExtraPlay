@@ -22,12 +22,20 @@ class Review
     }
 
     // Récupérer toutes les reviews
+
     public static function getAllReviews()
     {
-        $pdo = Database::getInstance()->getConnection();
-        $stmt = $pdo->query("SELECT * FROM review");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+        $pdo = Database::getInstance()->getConnection(); // Assurez-vous d'avoir une méthode pour obtenir la connexion DB
+    $query = "
+        SELECT review.*, users.username 
+        FROM review
+        INNER JOIN users ON review.id_user = users.id_user
+    ";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
     // Récupérer une review par son ID
     public static function getReviewById($id_review)

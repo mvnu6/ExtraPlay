@@ -30,7 +30,7 @@
                         echo '<a href="/logout" class="account" id="logout">Se déconnecter</a>';
                     } else {
                         // Si l'utilisateur n'est pas connecté, affiche "Inscris-toi"
-                        echo '<a href="/login" class="account" id="login">Inscris-toi</a>';
+                        echo '<a href="/register" class="account" id="login">Inscris-toi</a>';
                     }
                     ?>
                         <a href="/login" class="account" id="register">Jouer</a>
