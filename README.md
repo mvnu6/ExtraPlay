@@ -4,10 +4,9 @@ Une application simple de gestion de tâches construite avec PHP et PostgreSQL.
 
 ## 🚀 Fonctionnalités
 
-- Affichage des tâches
-- Ajout de nouvelles tâches
-- Marquage des tâches comme complétées/non complétées
-- Suppression des tâches
+- Connexion/Inscription
+- Lecture, Création, Suppression, Modification d’avis
+- 3 jeux fonctionnels
 - Persistance des données en base PostgreSQL
 
 ## 🛠 Prérequis

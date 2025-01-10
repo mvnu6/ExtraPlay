@@ -59,3 +59,5 @@ VALUES
 ('Motus', 'A fun game', 1, '/images/motus1.png', '/games/motus'),
 ('Quiz', 'An adventure game', 2, '/images/quiz1.jpg', '/games/quiz'),
 ('Memory Game', 'An adventure game', 2, '/images/cardmemory3.png', '/games/memory')
+
+ALTER TABLE users ADD COLUMN profile_picture VARCHAR(255);
