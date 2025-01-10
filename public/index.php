@@ -41,6 +41,7 @@ switch ($path) {
         break;
     case '/games/memory':
         $gamecontroller->memory();
+        $controller->footer();
         break;
 
     case '/games': // Nouvelle route

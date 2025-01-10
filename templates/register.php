@@ -9,14 +9,14 @@
 
         <!-- Formulaire d'inscription -->
         <form action="#" method="POST">
-            <label for="username">Nom d'utilisateur :</label><br>
-            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required><br>
+            <!-- <label for="username">Nom d'utilisateur :</label><br> -->
+            <input class="input-form" type="text" name="username" id="username" placeholder="Nom d'utilisateur" required><br>
 
-            <label for="email">Adresse Email :</label><br>
-            <input type="email" name="email" id="email" placeholder="Email" required><br>
+            <!-- <label for="email">Adresse Email :</label><br> -->
+            <input class="input-form" type="email" name="email" id="email" placeholder="Email" required><br>
 
-            <label for="password">Mot de Passe :</label><br>
-            <input type="password" name="password" id="password" placeholder="Mot de passe" required><br>
+            <!-- <label for="password">Mot de Passe :</label><br> -->
+            <input class="input-form" type="password" name="password" id="password" placeholder="Mot de passe" required><br>
 
             <button type="submit">S'inscrire</button>
         </form>

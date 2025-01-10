@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['username'])) {
-  header('Location: /login?redirect=/motus');
+  header('Location: /login?redirect=/games/motus');
   exit;
 }
 ?>

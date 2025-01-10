@@ -350,13 +350,11 @@ main i {
   width: 80%;
   display: flex;
   justify-content: space-between;
-  /* border: solid red; */
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  /* border: solid blue; */
 }
 
 .card {
@@ -929,10 +927,12 @@ main i {
 /* Index Avis */
 
 /* Conteneur de chaque avis */
+
 .reviews-container { 
-  display: flex; /* Utilise Flexbox */
-  flex-wrap: wrap; /* Permet d'afficher les avis côte à côte */
-  justify-content: space-between; /* Les avis sont espacés à gauche et à droite */
+  display: grid; /* Utilise Flexbox */
+  grid-template-columns: repeat(5, 1fr);
+  /* flex-wrap: wrap; Permet d'afficher les avis côte à côte */
+  /* justify-content: space-between; Les avis sont espacés à gauche et à droite */
   gap: 20px; /* Espace entre les avis */
   padding: 20px;
 }
@@ -951,7 +951,6 @@ main i {
   align-items: flex-start;
   color: black;
 }
-
 
 /* Image de profil */
 .profile-picture {
@@ -988,6 +987,56 @@ main i {
   color: lightgray;
 }
 
+/* Commentaire */
+.review-comment {
+  font-size: 1em;
+  margin-top: 10px;
+  color: black;
+  word-wrap: break-word; /* Casse les mots longs pour les faire revenir à la ligne */
+}
+
+/* Style pour les actions (modifier/supprimer) */
+.review-actions {
+  display: flex;
+  justify-content: flex-start; /* Aligner les boutons à gauche */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Boutons pour modifier et supprimer */
+.button-modify, .button-delete {
+  padding: 5px 12px;  /* Taille des boutons */
+  font-size: 0.9em;  /* Taille de police plus petite */
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;  /* Pour éviter le soulignement */
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Couleurs des boutons */
+.button-modify {
+  background-color: #007bff;  /* Bleu pour modifier */
+  color: white;
+}
+
+.button-modify:hover {
+  background-color: #0056b3;  /* Changer la couleur au survol */
+}
+
+.button-delete {
+  background-color: #dc3545;  /* Rouge pour supprimer */
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #c82333;  /* Changer la couleur au survol */
+}
+
+/* Pour le formulaire de suppression */
+.delete-form {
+  display: inline;  /* Le formulaire doit être en ligne pour ne pas casser la structure */
+}
 /* Commentaire */
 .review-comment {
   font-size: 1em;
@@ -1167,24 +1216,8 @@ footer #copyright {
   margin-top: 5em;
 }
 
-.login .login-main {
-  padding: 3%;
-  margin: 3em 0;
-  display: flex;
-  justify-content: center;
-}
 
-.login .login-main article {
-  padding: 7%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #eee;
-  display: flex;
-  flex-direction: column;
-}
-.login .login-main article form {
-  display: flex;
-  flex-direction: column;
-}
+
 
 
 /* Page construction */
@@ -1193,3 +1226,172 @@ footer #copyright {
   color: white;
   font-weight: bold;
 }
+
+/* Log in register form*/
+
+.main-content {
+  max-width: 350px;
+  margin: 20px auto;
+  background-color: rgb(24, 2, 45);
+  border: 1px solid #ccc;         /* Bordure grise pour le cadre */
+  border-radius: 10px;  
+  justify-content: center;  
+  padding: 5%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+  margin-bottom: 1px;
+}
+.input-form {
+    padding: .5em;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+/* Focus sur les champs de saisie */
+.input-form:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Bouton de soumission */
+.btn-login {
+    padding: 15px;
+    /* background-color: #007bff; */
+    /* color: white; */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+/* pour jeux memory */
+
+ /* Conteneur principal où le bouton sera centré */
+ .center-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}
+.center-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  height: 10em;
+  margin-bottom: 100px;
+}
+/* Style du bouton */
+.button-exit {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 60px; 
+  height: 60px; 
+  font-size: 2em; 
+  color: white;
+  background-color: #dc3545; 
+  text-decoration: none;
+  border-radius: 50%; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Effet au survol */
+.button-exit:hover {
+  background-color: #c82333; 
+  transform: scale(1.1);  
+}
+/* Icône à l'intérieur du bouton */
+.button-exit i {
+  text-align: center;
+}
+
+.text-center{
+  margin: 5em 0;
+}
+
+.score-points{
+  z-index: 100;
+}
+
+
+/* Quiz Game*/
+/*  css du quiz */
+.quiz-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+  height: auto;
+  padding: 20px; 
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; 
+  margin: 20px auto; 
+  text-align: center;
+  color: #000; 
+}
+
+.quiz-container h1,
+.quiz-container p {
+  color: #000;
+}
+
+.button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.correct {
+  background-color: green;
+  color: white;
+}
+
+button.incorrect {
+  background-color: red;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Style pour les images des coeurs */
+.heart {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.hearts-container {
+  margin-top: 20px;
+}
+
+
+.quiz {
+padding: 6em;
+}
+
+/* Style du bouton (déjà existant) */
+/* Conteneur principal pour centrer le bouton */

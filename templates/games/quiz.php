@@ -19,68 +19,7 @@ if (!isset($_SESSION['username'])) {
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <title>Quiz en Alpine.js</title>
 
-  <style>
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 50px;
-      background-color: #f4f4f4;
-    }
-
-    .quiz-container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-    }
-
-    button {
-      margin: 10px 0;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button.correct {
-      background-color: green;
-      color: white;
-    }
-
-    button.incorrect {
-      background-color: red;
-      color: white;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    /* Style pour les images des coeurs */
-    .heart {
-      width: 30px;
-      height: 30px;
-      margin: 5px;
-    }
-
-    .hearts-container {
-      margin-top: 20px;
-    }
-  </style>
-</head>
+<head>
 <!-- quizApp va etre rappele plus tard pour le js -->
 <div class="quiz-container" x-data="quizApp()">
   <!-- tant que le quizz n'est pas fini cela affiche la question actuelle -->
@@ -91,23 +30,23 @@ if (!isset($_SESSION['username'])) {
     <!-- Affiche les trois boutons de réponses possibles -->
     <!--  vérifie si l'utilisateur a sélectionné la réponse "a", et si la réponse "a" est correcte.. -->
     <div>
-      <button :class="{'correct': selectionnee === 'a' && estCorrect('a'), 'incorrect': selectionnee === 'a' && !estCorrect('a')}"
+      <button class="button" :class="{'correct': selectionnee === 'a' && estCorrect('a'), 'incorrect': selectionnee === 'a' && !estCorrect('a')}"
         @click="selectionnerReponse('a')"
         x-text="questionActuelle.answers[0]"></button>
     </div>
     <div>
-      <button :class="{'correct': selectionnee === 'b' && estCorrect('b'), 'incorrect': selectionnee === 'b' && !estCorrect('b')}"
+      <button class="button" :class="{'correct': selectionnee === 'b' && estCorrect('b'), 'incorrect': selectionnee === 'b' && !estCorrect('b')}"
         @click="selectionnerReponse('b')"
         x-text="questionActuelle.answers[1]"></button>
     </div>
     <div>
-      <button :class="{'correct': selectionnee === 'c' && estCorrect('c'), 'incorrect': selectionnee === 'c' && !estCorrect('c')}"
+      <button class="button" :class="{'correct': selectionnee === 'c' && estCorrect('c'), 'incorrect': selectionnee === 'c' && !estCorrect('c')}"
         @click="selectionnerReponse('c')"
         x-text="questionActuelle.answers[2]"></button>
     </div>
 
     <!-- Bouton pour passer à la question suivante -->
-    <button x-show="selectionnee" @click="questionSuivante()">Question suivante</button>
+    <button class="button" x-show="selectionnee" @click="questionSuivante()">Question suivante</button>
 
     <!-- Conteneur pour afficher les coeurs pleins ou vides en fonction des bonnes réponses -->
     <div class="hearts-container">
@@ -122,7 +61,7 @@ if (!isset($_SESSION['username'])) {
   <div x-show="estFini">
     <h2>Quiz terminé !</h2>
     <p>Vous avez répondu correctement à <span x-text="nbBonnesReponses"></span> questions .</p>
-    <button @click="recommencerQuiz()">Recommencer</button>
+    <button class="button" @click="recommencerQuiz()">Recommencer</button>
   </div>
 </div>
 <script>
@@ -505,7 +444,8 @@ if (!isset($_SESSION['username'])) {
     };
   }
 </script>
+<div class="center-container quiz">
+<a href="/" class="button-exit"><i class="fa-solid fa-house"></i></a>
 </body>
 
 </html>
-<?php echo "<a href='/logout'>Se déconnecter</a>"; ?>
