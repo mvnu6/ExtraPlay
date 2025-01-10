@@ -21,11 +21,11 @@ class Review
         $this->comment = $comment;
     }
 
-    // Récupérer toutes les reviews
+    
 
     public static function getAllReviews()
     {
-        $pdo = Database::getInstance()->getConnection(); // Assurez-vous d'avoir une méthode pour obtenir la connexion DB
+        $pdo = Database::getInstance()->getConnection(); 
     $query = "
         SELECT review.*, users.username 
         FROM review
@@ -37,7 +37,7 @@ class Review
 }
 
 
-    // Récupérer une review par son ID
+
     public static function getReviewById($id_review)
     {
         $pdo = Database::getInstance()->getConnection();
@@ -46,7 +46,6 @@ class Review
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Ajouter une review
     public function createReview()
     {
         $pdo = Database::getInstance()->getConnection();
@@ -60,7 +59,7 @@ class Review
         ]);
     }
 
-    // Mettre à jour une review
+    
     public function updateReview($id_review)
     {
         $pdo = Database::getInstance()->getConnection();
@@ -74,7 +73,7 @@ class Review
         ]);
     }
 
-    // Supprimer une review
+ 
     public static function deleteReview($id_review, $id_user)
     {
         $pdo = Database::getInstance()->getConnection();

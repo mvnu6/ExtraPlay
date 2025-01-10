@@ -56,7 +56,7 @@ class MainController
             }
         }
 
-        // Inclure la vue de connexion
+        
         require_once __DIR__ . '/../../templates/login.php';
     }
 
@@ -66,7 +66,7 @@ class MainController
             $username = $_POST['username'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
-            $redirect = $_GET['redirect'] ?? '/games'; // URL par défaut
+            $redirect = $_GET['redirect'] ?? '/games'; 
 
             if (!empty($username) && !empty($email) && !empty($password)) {
                 $pdo = Database::getInstance()->getConnection();
@@ -77,10 +77,9 @@ class MainController
                 $existingUser = $stmt->fetch();
 
                 if (!$existingUser) {
-                    // Hachage du mot de passe
+                    
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                    // Insertion de l'utilisateur dans la base de données
                     $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
                     $stmt->execute([
                         'username' => $username,
@@ -88,19 +87,19 @@ class MainController
                         'password' => $hashed_password
                     ]);
 
-                    // Récupérer l'utilisateur nouvellement créé
+                    // Récupére l'utilisateur nouvellement créé
                     $stmt = $pdo->prepare("SELECT id_user, username FROM users WHERE email = :email");
                     $stmt->execute(['email' => $email]);
                     $user = $stmt->fetch();
 
-                    // Enregistrer l'utilisateur dans la session
+                    // Enregistre l'utilisateur dans la session
                     if (session_status() === PHP_SESSION_NONE) {
                         session_start();
                     }
                     $_SESSION['user_id'] = $user['id_user'];
                     $_SESSION['username'] = $user['username'];
 
-                    // Rediriger vers l'URL précédente ou la page par défaut
+                   
                     header("Location: $redirect");
                     exit;
                 } else {
@@ -114,9 +113,6 @@ class MainController
         require_once __DIR__ . '/../../templates/register.php';
     }
 
-
-
-
     public function logout()
     {
         session_start();
@@ -128,10 +124,9 @@ class MainController
     public function games()
     {
 
-
         $games = $this->gameModel->getAllGames();
 
-        // Inclure les vues nécessaires
+       
         require_once __DIR__ . '/../../templates/partials/header.php';
         require_once __DIR__ . '/../../templates/games.php';
         require_once __DIR__ . '/../../templates/partials/footer.php';

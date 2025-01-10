@@ -33,13 +33,9 @@ if (!isset($_SESSION['username'])) {
 
   nav h1 {
     padding-right: 5px;
-    /* Create the gradient. */
     background-image: linear-gradient(65deg, #AE7D15, #ECD24D);
-    /* Set the background size and repeat properties. */
     background-size: 100%;
     background-repeat: repeat;
-    /* Use the text as a mask for the background. */
-    /* This will show the gradient as a text color rather than element bg. */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
@@ -47,9 +43,6 @@ if (!isset($_SESSION['username'])) {
   }
 
   nav svg {
-    /* margin-top: 1em; */
-    /* margin-left: auto; */
-    /* border: solid red; */
     width: 10%;
     padding: 1em;
   }
@@ -57,26 +50,16 @@ if (!isset($_SESSION['username'])) {
   main {
     margin-top: 2em;
     text-align: center;
-    /* height: 30vh; */
   }
 
   main article {
     display: flex;
     justify-content: center;
-
   }
 
   main section {
     display: grid;
-    /* grid-template-columns: repeat(5, 1fr);  */
-    /*A mettre sur la section*/
     gap: 5px;
-    /* grid-auto-flow: row; */
-    /* grid-template-rows: repeat(autofill, 1fr); */
-    /* border: solid green; */
-    /* align-items: center; */
-
-
   }
 
   main section div {
@@ -130,14 +113,12 @@ if (!isset($_SESSION['username'])) {
     font-size: 16px;
     width: 150px;
     margin-right: 10px;
-    /* border-radius: 5px; */
   }
 
   .answer-guess button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    /* border-radius: 15px; */
   }
 </style>
 

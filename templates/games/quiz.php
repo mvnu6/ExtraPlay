@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
   <title>Quiz en Alpine.js</title>
 
 <head>
-<!-- quizApp va etre rappele plus tard pour le js -->
+
 <div class="quiz-container" x-data="quizApp()">
   <!-- tant que le quizz n'est pas fini cela affiche la question actuelle -->
   <div x-show="!estFini">
@@ -28,7 +28,7 @@ if (!isset($_SESSION['username'])) {
     <h2 x-text="questionActuelle.question"></h2>
 
     <!-- Affiche les trois boutons de réponses possibles -->
-    <!--  vérifie si l'utilisateur a sélectionné la réponse "a", et si la réponse "a" est correcte.. -->
+
     <div>
       <button class="button" :class="{'correct': selectionnee === 'a' && estCorrect('a'), 'incorrect': selectionnee === 'a' && !estCorrect('a')}"
         @click="selectionnerReponse('a')"
@@ -45,7 +45,7 @@ if (!isset($_SESSION['username'])) {
         x-text="questionActuelle.answers[2]"></button>
     </div>
 
-    <!-- Bouton pour passer à la question suivante -->
+  
     <button class="button" x-show="selectionnee" @click="questionSuivante()">Question suivante</button>
 
     <!-- Conteneur pour afficher les coeurs pleins ou vides en fonction des bonnes réponses -->
@@ -393,12 +393,12 @@ if (!isset($_SESSION['username'])) {
           answers: ['Rainbow', 'Cry', 'Smile']
         },
       ],
-      // Initialisation de la question actuelle (par index), des réponses sélectionnées et des compteurs
+      // Initialisation de la question actuelle 
       indexQuestionActuelle: 0,
-      selectionnee: null, // Réponse sélectionnée par l'utilisateur
+      selectionnee: null, 
       nbBonnesReponses: 0,
       nbQuestionsPosees: 0,
-      estFini: false, // Indique si le quiz est terminé
+      estFini: false, 
 
       // Obtenir la question actuelle en fonction de l'index
       get questionActuelle() {
@@ -438,8 +438,8 @@ if (!isset($_SESSION['username'])) {
         this.indexQuestionActuelle = 0;
         this.nbBonnesReponses = 0;
         this.selectionnee = null;
-        this.estFini = false; // Indique que le quiz n'est pas terminé
-        this.questionSuivante(); // Sélectionne une nouvelle question au démarrage
+        this.estFini = false; 
+        this.questionSuivante(); 
       }
     };
   }

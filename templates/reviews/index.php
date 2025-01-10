@@ -1,17 +1,16 @@
 <div class="reviews-container">
 <?php foreach ($reviews as $review): ?>
     <div class="review-container">
-        <!-- Affichage de l'image de profil -->
         <img src="<?= htmlspecialchars($review['profile_picture'] ?? '/images/default-profile.jpg') ?>" alt="Profile Picture" class="profile-picture">
 
         <div class="review-content">
             <h3 class="review-username"><?= htmlspecialchars($review['username']) ?></h3>
             
             <?php
-                $note = (int) $review['note'];  // La note de l'avis (1 à 5)
-                $max_stars = 5;  // Le nombre d'étoiles maximum (5)
-                $filled_stars = $note;  // Nombre d'étoiles pleines (or)
-                $empty_stars = $max_stars - $filled_stars;  // Nombre d'étoiles vides (blanches)
+                $note = (int) $review['note'];  
+                $max_stars = 5;  
+                $filled_stars = $note;  
+                $empty_stars = $max_stars - $filled_stars;  
             ?>
 
             <!-- Affichage des étoiles -->

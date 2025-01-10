@@ -44,8 +44,8 @@ switch ($path) {
         $controller->footer();
         break;
 
-    case '/games': // Nouvelle route
-        $controller->games(); // Appelle la méthode games() du contrôleur
+    case '/games': 
+        $controller->games(); 
         break;
     case '/reviews':
         $reviewcontroller->index();

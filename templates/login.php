@@ -11,9 +11,7 @@
 
     <!-- Formulaire de connexion -->
     <form action="#" method="post" class="">
-        <!-- <label for="email">Adresse Email :</label><br> -->
         <input class="input-form" type="email" name="email" id="email" placeholder="Votre email" required><br>
-        <!-- <label for="password">Mot de Passe :</label><br> -->
         <input class="input-form" type="password" name="password" id="password" placeholder="Votre mot de passe" required><br>
         <button class="btn-login"type="submit">Se connecter</button>
     </form>
