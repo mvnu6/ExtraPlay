@@ -14,31 +14,34 @@ if (isset($_SESSION['username'])) {
 <main class="games-main">
   <h1 class="text-games">Liste des jeux 🎮</h1>
   <div class="games">
-    <?php foreach ($games as $game): ?>      
+    <?php foreach ($games as $game): ?>
 
       <!-- Cartes ! -->
       <div class="grid">
-      <a href="<?= $game['game_path'] ?>">
-        <div class="card-game">
-          
-          <a href="<?= $game['game_path'] ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
-          <p>
-          Devinez le mot caché en utilisant logique et déductions ! Un défi rapide et captivant.
+        <a href="<?= $game['game_path'] ?>">
+          <div class="card-game">
+
+            <a href="<?= $game['game_path'] ?>" class="text-dark"><?= htmlspecialchars($game['name']); ?></a>
+            <p>
+              Devinez le mot caché en utilisant logique et déductions ! Un défi rapide et captivant.
 
 
-          </p>
-          <div class="shine"></div>
-          <div class="background">
-            <a href="<?= $game['game_path'] ?>" class="game-hover-overlay-link">
-              <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
+            </p>
+            <div class="shine"></div>
+            <div class="background">
+              <a href="<?= $game['game_path'] ?>" class="game-hover-overlay-link">
+                <img src="<?= $game['image_path']; ?>" alt="<?= $game['name']; ?>" class="img-fluid">
+            </div>
+            <a href="<?= $game['game_path'] ?>" class="btn btn-primary">
+              <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
+            </a>
           </div>
-          <a href="<?= $game['game_path'] ?>" class="btn btn-primary">
-            <i class="fa fa-gamepad"></i><span class="ml-2">Jouer</span>
-          </a>
-        </div>
-      </a>
+        </a>
       </div>
 
     <?php endforeach; ?>
+  </div>
+  <div class="center-container">
+    <a href="/" class="button-exit"><i class="fa-solid fa-house"></i></a>
   </div>
 </main>

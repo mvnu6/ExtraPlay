@@ -234,11 +234,13 @@ main .btn1 {
   font-weight: bold;
   cursor: pointer;
 }
-main i {
+.main-accueil i {
   align-items: center;
   margin-left: 0.5rem;
   font-size: var(--tiny);
 }
+
+
 
 .hero-banner {
   display: flex;
@@ -409,6 +411,12 @@ main i {
 }
 .games img {
   width: 100%;
+}
+
+.games-main i{
+  font-size: var(--tiny);
+  align-items: center;
+
 }
 .games-home {
   display: grid;
@@ -849,6 +857,86 @@ main i {
 }
 
 /* Mettre un Avis */
+
+/* Styles pour le conteneur principal */
+.reviews-create {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Styles pour les labels */
+.reviews-create label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Styles pour les inputs et le select */
+.reviews-create input[type="text"],
+.reviews-create select,
+.reviews-create textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Styles pour le champ de texte */
+.reviews-create textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Styles pour le conteneur des étoiles */
+.reviews-create #stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+/* Styles pour les étoiles */
+.reviews-create #stars input[type="radio"] {
+  display: none;
+}
+
+.reviews-create #stars label {
+  font-size: 25px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.reviews-create #stars input[type="radio"]:checked~label {
+  color: #ffcc00;
+}
+
+/* Styles pour le bouton d'envoi */
+.reviews-create button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reviews-create button:hover {
+  background-color: #0056b3;
+}
+/* --- */
 #stars {
   display: flex;
   direction: row;
@@ -929,11 +1017,9 @@ main i {
 /* Conteneur de chaque avis */
 
 .reviews-container { 
-  display: grid; /* Utilise Flexbox */
-  grid-template-columns: repeat(5, 1fr);
-  /* flex-wrap: wrap; Permet d'afficher les avis côte à côte */
-  /* justify-content: space-between; Les avis sont espacés à gauche et à droite */
-  gap: 20px; /* Espace entre les avis */
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
   padding: 20px;
 }
 
@@ -1173,6 +1259,14 @@ main i {
 /* Message Tous les jeux */
 .text-games {
   margin: 2em 0 2em 2em;
+  color: white;
+  font-weight: bold;
+}
+.accueil-redirection{
+  
+  padding-top: 10em;
+  color: white;
+  font-weight: bold;
 }
 
 /* Footer */
@@ -1220,17 +1314,13 @@ footer #copyright {
 
 
 
-/* Page construction */
 
-.construction-page a{
-  color: white;
-  font-weight: bold;
-}
 
 /* Log in register form*/
 
 .main-content {
   max-width: 350px;
+  text-align: center;
   margin: 20px auto;
   background-color: rgb(24, 2, 45);
   border: 1px solid #ccc;         /* Bordure grise pour le cadre */
@@ -1238,13 +1328,17 @@ footer #copyright {
   justify-content: center;  
   padding: 5%;
 }
+.main-content h1{
+  text-align: center;
+  margin-bottom: 1em;
+}
 form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
-label {
+.main-content label {
   font-size: 1rem;
   color: #555;
   text-align: left;
@@ -1268,6 +1362,7 @@ label {
 /* Bouton de soumission */
 .btn-login {
     padding: 15px;
+    margin: .5em 0;
     /* background-color: #007bff; */
     /* color: white; */
     border: none;
@@ -1377,7 +1472,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Style pour les images des coeurs */
 .heart {
   width: 30px;
   height: 30px;
@@ -1388,10 +1482,7 @@ button:hover {
   margin-top: 20px;
 }
 
-
 .quiz {
 padding: 6em;
 }
 
-/* Style du bouton (déjà existant) */
-/* Conteneur principal pour centrer le bouton */

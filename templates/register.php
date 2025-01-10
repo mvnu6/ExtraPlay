@@ -18,7 +18,7 @@
             <!-- <label for="password">Mot de Passe :</label><br> -->
             <input class="input-form" type="password" name="password" id="password" placeholder="Mot de passe" required><br>
 
-            <button type="submit">S'inscrire</button>
+            <button class="btn-login" type="submit">S'inscrire</button>
         </form>
         <p>Déjà inscrit ? <a href="/login">Se connecter</a></p>
 
