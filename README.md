@@ -1,6 +1,6 @@
-# Application Todo List
+# Application de jeux
 
-Une application simple de gestion de tâches construite avec PHP et PostgreSQL.
+Une application simple de support de jeux construite avec PHP et PostgreSQL.
 
 ## 🚀 Fonctionnalités
 
